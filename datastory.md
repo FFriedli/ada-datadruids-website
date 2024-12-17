@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: letter
 ---
 
 <style>
@@ -26,6 +26,8 @@ Imagine this: a packed theater, audiences glued to their seats, so captivated by
 Book-based movies have a unique power: they can tap into an existing fanbase, provide a blueprint for the adaptation, and have a proven track record of yielding more successful movies compared to non-book-based movies. However, not all adaptations are created equal. While some are known by everyone, others fall short. What does it take to create the next gem? That is where we come into play.
 
 In the following, we will show that your next movie should be based on a book. We will explore how such films outperform their non-adapted counterparts and uncover the most important factors to push your movie to the top. From genre choice to popularity to narrative fidelity we will tell you what factors to consider to turn the book you choose into the next blockbuster.
+
+
 
 
 <iframe src="assets/plots/test_plot.html" width="830px" height="700px" style="border:none;"></iframe>
