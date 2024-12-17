@@ -2,21 +2,6 @@
 layout: letter_2
 ---
 
-<style>
-  body {
-    /*font-family: "Comic Sans MS", cursive, sans-serif;*/
-    /*font-family:'Comic Sans MS', Chalkboard, cursive;*/
-    /*font-family: 'Comic Sans MS', cursive;*/
-
-    /*font-family: 'Brush Script MT', cursive;*/
-    /*font-family:'Apple Chancery', 'Lucida Calligraphy', cursive;*/
-
-    /*font-family: 'Lucida Handwriting', cursive;*/
-    /*font-family: 'Segoe Script', cursive;*/
-    /*font-family: 'Segoe Print', cursive;*/
-
-  }
-</style>
 
 
 # Dear Director,

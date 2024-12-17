@@ -4,7 +4,159 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../css/letter.css">
 
+        <style>
+            body {
+                font-family: "Lato", sans-serif;
+            }
 
+            .letter {
+                font-family: 'Dancing Script', cursive; /* Handwritten font */
+                background-color: #fdf9f3; /* Slight beige background */
+                line-height: 1.6;
+                color: #3e3e3e;
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            .sidebar {
+                height: 100%;
+                width: 0;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                left: 0;
+                background-color: #111;
+                overflow-x: hidden;
+                transition: 0.5s;
+                padding-top: 60px;
+            }
+
+            .sidebar a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .sidebar a:hover {
+                color: #f1f1f1;
+            }
+
+            .sidebar .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+            .openbtn {
+                font-size: 20px;
+                cursor: pointer;
+                background-color: #111;
+                color: white;
+                padding: 10px 15px;
+                border: none;
+                border-radius: 5px; /* Rounded corners */
+            }
+
+            .openbtn:hover {
+                background-color: #444;
+            }
+
+            /* On sidebar open, shift content */
+            #main.open-sidebar {
+                margin-left: 250px; /* Same as sidebar width */
+                width: calc(100% - 250px); /* Ensure content fills the remaining space */
+            }
+
+            /* Ensure content is centered when sidebar is closed */
+            #main {
+                transition: margin-left .5s, width .5s;
+                padding: 16px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                flex-direction: column;
+                max-width: 80%;
+                margin: 0 auto;
+                width: 100%; /* Default full width when sidebar is closed */
+            }
+
+
+            #letter {
+                width: 80%;
+                background: #fbf7e9;
+                border: 1px solid #e2d4b7;
+                padding: 2rem;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                border-radius: 5px;
+                line-height: 2;
+                position: relative;
+                background-image: repeating-linear-gradient(
+                        to bottom,
+                        transparent 0px,
+                        transparent 24px,
+                        #e2d4b7 25px
+                ); /* Horizontal lines on the paper */
+                background-size: 100% 25px;
+            }
+
+
+            /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+            @media screen and (max-height: 450px) {
+                .sidebar {
+                    padding-top: 15px;
+                }
+
+                .sidebar a {
+                    font-size: 18px;
+                }
+            }
+
+
+            /* General Reset */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /* Letter Container */
+            h1, h2, p {
+                font-family: 'Great Vibes', cursive; /* Elegant handwritten font */
+            }
+
+            h1, h2 {
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+
+            p {
+                text-indent: 2em; /* Paragraph indentation */
+                margin-bottom: 1rem;
+                font-size: 1.1rem;
+            }
+
+            /* Optional: Add a signature */
+            .signature {
+                font-family: 'Dancing Script', cursive;
+                text-align: right;
+                font-size: 1.5rem;
+                margin-top: 2rem;
+            }
+
+            /* Link to Google Fonts */
+            @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap');
+
+        </style>
 
     </head>
     <body>
