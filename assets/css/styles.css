@@ -312,3 +312,8 @@ footer {
   right: 10px;  /* Adjust position from the right */
   top: 30%;
 }
+
+#scatterplot {
+  width: 100%;
+  height: 100%;
+}
