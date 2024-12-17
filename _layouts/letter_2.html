@@ -6,7 +6,7 @@
         <style>
             body {
                 font-family: "Lato", sans-serif;
-                background-image: url('/assets/img/covers/mulan.jpg'); /* Add your image path here */
+                background-image: url('{{ "/assets/img/covers/mulan.jpg" | relative_url }}'); /* Use relative_url for GitHub Pages */
             }
 
             .sidebar {
@@ -154,7 +154,7 @@
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <a href="{{ site.baseurl }}/">Home</a>
-            <a href="/datastory">Data Story</a>
+            <a href="{{ site.baseurl }}/datastory">Data Story</a>
             <a href="#dear-director" class="indented">Intro</a> <!-- Added class "indented" -->
             <a href="#popularity-of-movies-vs-books" class="indented">Popularity</a> <!-- Added class "indented" -->
             <a href="#" class="indented">TODO!</a> <!-- Added class "indented" -->
