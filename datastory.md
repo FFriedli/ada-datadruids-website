@@ -1,5 +1,5 @@
 ---
-layout: letter
+layout: letter_2
 ---
 
 <style>
