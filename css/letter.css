@@ -62,22 +62,31 @@ body {
   background-color: #444;
 }
 
+/* On sidebar open, shift content */
+#main.open-sidebar {
+  margin-left: 250px; /* Same as sidebar width */
+  width: calc(100% - 250px); /* Ensure content fills the remaining space */
+}
+
+/* Ensure content is centered when sidebar is closed */
 #main {
-  transition: margin-left .5s;
+  transition: margin-left .5s, width .5s;
   padding: 16px;
   display: flex;
-  justify-content: center; /* Horizontally centers content */
-  align-items: center;     /* Vertically centers content */
-  min-height: 100vh;       /* Ensures the content takes full viewport height */
-  flex-direction: column;  /* Stacks content vertically */
-  max-width: 80%;          /* Sets the max width to 80% of the available space */
-  margin: 0 auto;          /* Centers the main container horizontally */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  max-width: 80%;
+  margin: 0 auto;
+  width: 100%; /* Default full width when sidebar is closed */
 }
 
 
 
+
 #letter {
-  width: 60%;
+  width: 80%;
   background: #fbf7e9;
   border: 1px solid #e2d4b7;
   padding: 2rem;
