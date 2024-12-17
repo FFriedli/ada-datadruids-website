@@ -84,8 +84,6 @@ body {
 }
 
 
-
-
 #letter {
   width: 80%;
   background: #fbf7e9;
@@ -122,11 +120,12 @@ body {
 }
 
 /* Letter Container */
-
+h1, h2, p {
+  font-family: 'Great Vibes', cursive; /* Elegant handwritten font */
+}
 
 h1, h2 {
   text-align: center;
-  font-family: 'Great Vibes', cursive; /* Elegant handwritten font */
   margin-bottom: 1rem;
 }
 
