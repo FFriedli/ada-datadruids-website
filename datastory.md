@@ -15,7 +15,7 @@ In the following, we will show that your next movie should be based on a book. W
 
 
 
-<iframe src="assets/plots/test_plot.html" width="100%" height="700px" style="border:none;"></iframe>
+<iframe src="assets/plots/test_plot.html" width="100%" height="650px" style="border:none;"></iframe>
 
 
 
