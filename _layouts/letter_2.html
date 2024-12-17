@@ -142,6 +142,9 @@
             /* Link to Google Fonts */
             @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap');
 
+            .sidebar .indented {
+                padding-left: 50px; /* Adjust this value to control the level of indentation */
+            }
         </style>
 
     </head>
@@ -150,10 +153,12 @@
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
             <a href="{{ site.baseurl }}/">Home</a>
-            <a href="#dear-director">Intro</a>
-            <a href="#popularity-of-movies-vs-books">Clients</a>
-            <a href="#">Contact</a>
+            <a href="/datastory">Data Story</a>
+            <a href="#dear-director" class="indented">Intro</a> <!-- Added class "indented" -->
+            <a href="#popularity-of-movies-vs-books" class="indented">Popularity</a> <!-- Added class "indented" -->
+            <a href="#" class="indented">TODO!</a> <!-- Added class "indented" -->
         </div>
+
 
         <div id="main">
             <button class="openbtn" onclick="openNav()" style="position: fixed; top: 10px; left: 10px;">☰</button>
