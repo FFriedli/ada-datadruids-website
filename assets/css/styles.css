@@ -15,6 +15,10 @@ p, ul, ol, table, pre, dl {
   margin:0 0 20px;
 }
 
+iframe {
+  margin: 0 0 0;
+}
+
 h1, h2, h3 {
   line-height:1.1;
 }
@@ -287,7 +291,7 @@ footer {
 }
 
 #searchButton {
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-left: 10px;
   border: none;
   border-radius: 4px;
@@ -299,4 +303,12 @@ footer {
 
 #searchButton:hover {
   background-color: #0056b3;
+}
+
+
+#movieSearch::-webkit-search-cancel-button {
+  color: red;  /* Change the color of the clear button to red */
+  position: absolute;
+  right: 10px;  /* Adjust position from the right */
+  top: 30%;
 }
