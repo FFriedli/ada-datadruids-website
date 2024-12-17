@@ -291,7 +291,7 @@ footer {
 }
 
 #searchButton {
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-left: 10px;
   border: none;
   border-radius: 4px;
@@ -308,8 +308,7 @@ footer {
 
 #movieSearch::-webkit-search-cancel-button {
   color: red;  /* Change the color of the clear button to red */
-  font-size: 20px;  /* Adjust size if necessary */
   position: absolute;
   right: 10px;  /* Adjust position from the right */
-  top: 40%;
+  top: 30%;
 }
