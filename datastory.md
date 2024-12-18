@@ -21,7 +21,7 @@ their non-adapted counterparts and uncover the most important factors to catapul
 to popularity to narrative fidelity we will tell you what factors to consider to turn the book you choose into the next
 blockbuster.
 
-<iframe src="assets/plots/searchable_bob_revenue_vs_rating.html" width="100%" height="650px" style="border:none;"></iframe>
+<iframe src="assets/plots/searchable_bob_revenue_vs_rating.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ## Why to base the movie on a Book
 
