@@ -26,14 +26,12 @@
 
         let data = result.data;
 
-        console.log("first 10 rows: ", data.slice(0, 10));
         data = data.filter(row => row.revenue !== null && row.revenue !== 0 && row.budget !== null && row.budget !== 0);
 
         // Filter data to only include book-based movies (based_on_book == 1)
         const based_on_book = data.filter(row => row.based_on_book === "True");
         const not_based_on_book = data.filter(row => row.based_on_book === "False");
 
-        console.log("based on book length: ", based_on_book.length);
 
         // Drop rows where 'revenue' or 'budget' are null or 0
 
@@ -89,9 +87,6 @@
                 mean: d3.mean(values, d => d[columnName]),
             }))
             .sort((a, b) => a.year_group - b.year_group);  // Sort by year_group in ascending order
-
-        console.log("first 10 trend data (based on book): ", trendDataBook.slice(0, 10));
-        console.log("first 10 trend data (not based on book): ", trendDataNotBook.slice(0, 10));
 
         const yearsBook = trendDataBook.map(d => d.year_group);
         const medianValuesBook = trendDataBook.map(d => d.median);
@@ -193,7 +188,7 @@
             based_on_book,
             not_based_on_book,
             'revenue_minus_budget',
-            'Inflation Adjusted Revenue-Budget Differences of BOBs and NOBs Over Time',
+            'Inflation Adjusted Profit of BOBs and NOBs Over Time',
             'Revenue - Budget',
             [0, 1.5e8]
         );
@@ -208,13 +203,9 @@
 <script>
     // Function to simulate the click on the reset button
     function simulateResetClick() {
-
-        console.log("Simulating reset click");
-        console.log("doczm: ", document);
         // Select the reset button using a unique attribute or class
         const resetButton = document.querySelector('a[data-title="Reset axes"]');
 
-        console.log("Reset button: ", resetButton);
         // Check if the element exists
         if (resetButton) {
             resetButton.click();

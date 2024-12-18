@@ -33,7 +33,7 @@
 
 
 <!-- Plotly Chart -->
-<div id="scatterplot"></div>
+<div id="scatterplot-with-button"></div>
 
 <script>
     async function fetchData() {
@@ -156,7 +156,7 @@
         };
 
         // Render the plot
-        Plotly.newPlot('scatterplot', traces, layout);
+        Plotly.newPlot('scatterplot-with-button', traces, layout);
 
         // Store data for highlighting
         window.movieData = categorizedData;
@@ -172,7 +172,7 @@
 
         if (existingTraceIndex > -1) {
             // Remove the existing trace
-            Plotly.deleteTraces('scatterplot', existingTraceIndex + 4); // +4 because we have the 4 other traces already
+            Plotly.deleteTraces('scatterplot-with-button', existingTraceIndex + 4); // +4 because we have the 4 other traces already
             plotData.splice(existingTraceIndex, 1); // Remove the trace from plotData
         }
 
@@ -202,7 +202,7 @@
             };
 
             // Add the highlight trace
-            Plotly.addTraces('scatterplot', highlightTrace);
+            Plotly.addTraces('scatterplot-with-button', highlightTrace);
             plotData.push(highlightTrace); // Add the new trace to plotData
         }
     }
@@ -214,26 +214,31 @@
 
 <!-- Place the script before the closing body tag -->
 <script>
+    // Debounce function to limit the rate at which a function is executed
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
     // Function to simulate the click on the reset button
     function simulateResetClick() {
-
-        console.log("Simulating reset click");
-        console.log("doczm: ", document);
         // Select the reset button using a unique attribute or class
         const resetButton = document.querySelector('a[data-title="Reset axes"]');
 
-        console.log("Reset button: ", resetButton);
         // Check if the element exists
         if (resetButton) {
             resetButton.click();
         }
     }
 
-    // Add event listener for screen resizing
-    window.addEventListener('resize', function () {
+    // Add event listener for screen resizing with debounce
+    window.addEventListener('resize', debounce(function () {
         // Simulate the click on the reset button on resize
         simulateResetClick();
-    });
+    }, 300)); // Adjust the debounce delay as needed (300ms in this example)
 </script>
 
 </body>

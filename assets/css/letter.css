@@ -60,13 +60,13 @@ body {
 /* Ensure content is centered when sidebar is closed */
 #main {
     transition: margin-left .5s, width .5s;
-    padding: 16px;
+    /*padding: 16px;*/
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     width: 100%; /* Default full width when sidebar is closed */
 }
