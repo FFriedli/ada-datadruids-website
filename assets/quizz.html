@@ -194,9 +194,12 @@
             document.getElementById('nextButton').style.display = "none";
             document.getElementById('repeatButton').style.display = "inline-block";
             summaryDiv.innerHTML = `
-                <h2>You finished the Quiz! You got ${correctAnswers} out of ${movies.length} correct.</h2>
+                <h2>You finished the Quiz! You got ${correctAnswers} / ${movies.length} correct.</h2>
             `;
         } else {
+            summaryDiv.innerHTML = `
+                <h2>Current Score: ${correctAnswers} / ${currentQuestion + 1}</h2>
+            `;
             // Show "Next Question" button if there are more questions
             document.getElementById('nextButton').style.display = "inline-block";
         }
