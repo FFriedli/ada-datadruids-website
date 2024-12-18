@@ -233,8 +233,8 @@ start-page-body {
     position: absolute;
     top: 60%; /* Adjust this value to move the rectangle lower */
     left: 62%; /* Horizontally center */
-    width: 15%; /* Adjust the width of the rectangle */
-    height: 15%; /* Adjust the height of the rectangle */
+    width: 30%; /* Adjust the width of the rectangle */
+    height: 20%; /* Adjust the height of the rectangle */
     background: transparent;
     border: none;
     cursor: pointer; /* Change cursor to pointer for interactivity */
