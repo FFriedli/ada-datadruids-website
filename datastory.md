@@ -21,72 +21,59 @@ their non-adapted counterparts and uncover the most important factors to catapul
 to popularity to narrative fidelity we will tell you what factors to consider to turn the book you choose into the next
 blockbuster.
 
-<iframe src="assets/plots/searchable_bob_revenue_vs_rating.html" width="100%" height="500px" style="border:none;"></iframe>
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/searchable_bob_revenue_vs_rating.html" 
+            width="100%" 
+            height="500vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
 
 ## Why to base the movie on a Book
 
-### Revenue-Budget Difference of Movies vs books
-<iframe src="assets/plots/revenue-budjet_over_time_try.html" width="100%" height="500px" style="border:none;"></iframe>
+### Revenue and Budjet Analysis of Movies vs Books
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/adj_budget_over_time_js.html" 
+            width="100%" 
+            height="450vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/adj_revenue_over_time_js.html" 
+            width="100%" 
+            height="450vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/revenue-budjet_over_time_try.html" 
+            width="100%" 
+            height="450vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
 
 ### Popularity of Movies vs books
 
-<iframe src="assets/plots/popularity_over_time_js.html" width="100%" height="500px" style="border:none;"></iframe>
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/popularity_over_time_js.html" 
+            width="100%" 
+            height="450vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
 
-
-[//]: # (<iframe src="assets/plots/Revenue - Budget of Book-Based vs. not Book-Based Movies_overlay.html" width="100%" height="620px" style="border:none;"></iframe>)
-
-
----
-
-
-
-
-[//]: # (Overlaid:)
-
-[//]: # (<iframe src="assets/plots/Popularity of Book-Based vs. not Book-Based Movies_overlay.html" width="100%" height="620px" style="border:none;"></iframe>)
-
-[//]: # ()
-[//]: # (Not overlaid:)
-
-[//]: # (<iframe src="assets/plots/Popularity of Book-Based Movies per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>)
-
-[//]: # (<iframe src="assets/plots/Popularity of Non-Book-Based Movies per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>)
-
-### Budget
-
-Overlaid:
-<iframe src="assets/plots/Budget of Book-Based vs. not Book-Based Movies_overlay.html" width="100%" height="620px" style="border:none;"></iframe>
-
-
-Not overlaid:
-<iframe src="assets/plots/Budget of Book-Based Movies per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>
-
-<iframe src="assets/plots/Budget of Non-Book-Based Movies per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>
-
-### Revenue
-
-Overlaid:
-<iframe src="assets/plots/Revenue of Book-Based vs. not Book-Based Movies_overlay.html" width="100%" height="620px" style="border:none;"></iframe>
-
-
-
-Not overlaid:
-<iframe src="assets/plots/Revenue of Book-Based Movies per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>
-
-<iframe src="assets/plots/Revenue of Non-Book-Based Movies per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>
-
-
-### Summary Similarity
-<iframe src="assets/plots/Book-Movie Summary Similarity per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>
-
-
-
-### Sentiment Similarity
-<iframe src="assets/plots/Book-Movie Summary Sentiment Difference per 3-Year Interval.html" width="100%" height="620px" style="border:none;"></iframe>
 
 ### Movie Revenue Quiz
 
-<iframe src="assets/quizz.html" width="1020px" height="720px" style="border:none;"></iframe>
-
+[//]: # (<iframe src="assets/quizz.html" width="1020px" height="720px" style="border:none;"></iframe>)
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/quizz.html" 
+            width="100%" 
+            height="720px" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
 
 
