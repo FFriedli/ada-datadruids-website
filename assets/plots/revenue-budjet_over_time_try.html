@@ -1,0 +1,203 @@
+<body style="margin: 0; padding: 10px;">
+<div>
+    <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</div>
+
+<!-- Plotly Chart -->
+<div id="scatterplot"></div>
+
+<script>
+    async function fetchData() {
+        const response = await fetch('regression_dataset_tmdb.csv');
+        const csvText = await response.text();
+        const result = Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+            dynamicTyping: true,
+        });
+
+        if (result.errors.length) {
+            console.error("Errors during CSV parsing:", result.errors);
+        }
+
+        let data = result.data;
+
+        console.log("first 10 rows: ", data.slice(0, 10));
+        data = data.filter(row => row.revenue !== null && row.revenue !== 0 && row.budget !== null && row.budget !== 0);
+
+        // Filter data to only include book-based movies (based_on_book == 1)
+        const based_on_book = data.filter(row => row.based_on_book === "True");
+        const not_based_on_book = data.filter(row => row.based_on_book === "False");
+
+        console.log("based on book length: ", based_on_book.length);
+
+        // Drop rows where 'revenue' or 'budget' are null or 0
+
+        return [based_on_book, not_based_on_book];
+    }
+
+    // Function to calculate median trends and prepare data
+    function calculateTrends(data, revenueColumn, budgetColumn) {
+        const trends = data.map(d => {
+            return {
+                year_group: d.year_group,  // Group by 3-year intervals
+                revenue_minus_budget: d[revenueColumn] - d[budgetColumn],
+            };
+        });
+
+        return trends;
+    }
+
+    // Plot box plot with trends over time
+    function linearRegression(x, y) {
+        const n = x.length;
+        const xMean = d3.mean(x);
+        const yMean = d3.mean(y);
+        const ssXX = d3.sum(x.map(d => Math.pow(d - xMean, 2)));
+        const ssXY = d3.sum(x.map((d, i) => (d - xMean) * (y[i] - yMean)));
+        const slope = ssXY / ssXX;
+        const intercept = yMean - slope * xMean;
+        return {slope, intercept};
+    }
+
+    // Function to generate regression line data
+    function generateRegressionLine(x, slope, intercept) {
+        return x.map(d => slope * d + intercept);
+    }
+
+    function plotBoxWithTrendsOverTime(based_on_book, not_based_on_book, columnName, title, yAxisLabel, yAxisRange) {
+        const trendsBook = calculateTrends(based_on_book, 'adjusted_revenue', 'adjusted_budget');
+        const trendsNotBook = calculateTrends(not_based_on_book, 'adjusted_revenue', 'adjusted_budget');
+
+        // Use d3.groups to group the data by 'year_group'
+        const trendDataBook = d3.groups(trendsBook, d => d.year_group)
+            .map(([year, values]) => ({
+                year_group: +year,  // Convert year_group to number
+                median: d3.median(values, d => d[columnName]),
+                mean: d3.mean(values, d => d[columnName]),
+            }))
+            .sort((a, b) => a.year_group - b.year_group);  // Sort by year_group in ascending order
+
+        const trendDataNotBook = d3.groups(trendsNotBook, d => d.year_group)
+            .map(([year, values]) => ({
+                year_group: +year,  // Convert year_group to number
+                median: d3.median(values, d => d[columnName]),
+                mean: d3.mean(values, d => d[columnName]),
+            }))
+            .sort((a, b) => a.year_group - b.year_group);  // Sort by year_group in ascending order
+
+        console.log("first 10 trend data (based on book): ", trendDataBook.slice(0, 10));
+        console.log("first 10 trend data (not based on book): ", trendDataNotBook.slice(0, 10));
+
+        const yearsBook = trendDataBook.map(d => d.year_group);
+        const medianValuesBook = trendDataBook.map(d => d.median);
+        const meanValuesBook = trendDataBook.map(d => d.mean);
+
+        const yearsNotBook = trendDataNotBook.map(d => d.year_group);
+        const medianValuesNotBook = trendDataNotBook.map(d => d.median);
+        const meanValuesNotBook = trendDataNotBook.map(d => d.mean);
+
+        // Calculate regression lines
+        const {slope: slopeBook, intercept: interceptBook} = linearRegression(yearsBook, medianValuesBook);
+        const regressionLineBook = generateRegressionLine(yearsBook, slopeBook, interceptBook);
+
+        const {slope: slopeNotBook, intercept: interceptNotBook} = linearRegression(yearsNotBook, medianValuesNotBook);
+        const regressionLineNotBook = generateRegressionLine(yearsNotBook, slopeNotBook, interceptNotBook);
+
+        // Mean trend
+        const meanTrendBook = {
+            type: 'scatter',
+            x: yearsBook,
+            y: meanValuesBook,
+            mode: 'lines+markers',
+            name: 'Means (BOB)',
+            line: {color: '#332288', width: 2, dash: 'dash'},
+            visible: 'legendonly'
+        };
+
+        // Median trend
+        const medianTrendBook = {
+            type: 'scatter',
+            x: yearsBook,
+            y: medianValuesBook,
+            mode: 'lines+markers',
+            name: 'Medians (BOB)',
+            line: {color: '#AA4499', width: 2},
+        };
+
+        // Regression lines
+        const regressionTrendBook = {
+            type: 'scatter',
+            x: yearsBook,
+            y: regressionLineBook,
+            mode: 'lines',
+            name: 'LR on Medians (BOB)',
+            line: {color: '#CC6677', width: 2},
+        };
+
+
+
+        const meanTrendNotBook = {
+            type: 'scatter',
+            x: yearsNotBook,
+            y: meanValuesNotBook,
+            mode: 'lines+markers',
+            name: 'Means (NOB)',
+            line: {color: '#117733', width: 2, dash: 'dash'},
+            visible: 'legendonly'
+        };
+
+        const medianTrendNotBook = {
+            type: 'scatter',
+            x: yearsNotBook,
+            y: medianValuesNotBook,
+            mode: 'lines+markers',
+            name: 'Medians (NOB)',
+            line: {color: '#44AA99', width: 2},
+        };
+
+        const regressionTrendNotBook = {
+            type: 'scatter',
+            x: yearsNotBook,
+            y: regressionLineNotBook,
+            mode: 'lines',
+            name: 'LR on Medians (NOB)',
+            line: {color: '#88CCEE', width: 2},
+        };
+
+        const layout = {
+            title: title,
+            xaxis: {title: 'Year Group'},
+            yaxis: {title: yAxisLabel, range: yAxisRange},
+            showlegend: true,
+            legend: {
+                x: 0.01,
+                y: 1,
+                xanchor: 'left',
+                yanchor: 'top',
+                bgcolor: 'rgba(255, 255, 255, 0.5)'  // Set background color with transparency
+            }
+        };
+
+        // Create the plot
+        Plotly.newPlot('scatterplot', [meanTrendBook, medianTrendBook, regressionTrendBook, meanTrendNotBook, medianTrendNotBook, regressionTrendNotBook], layout);
+    }
+    async function initPlot() {
+        const [based_on_book, not_based_on_book] = await fetchData();
+        plotBoxWithTrendsOverTime(
+            based_on_book,
+            not_based_on_book,
+            'revenue_minus_budget',
+            'Inflation Adjusted Revenue-Budget Differences of BOBs and NOBs Over Time',
+            'Revenue - Budget',
+            [0, 1.5e8]
+        );
+    }
+
+    // Initialize the plot
+    initPlot();
+</script>
+</body>

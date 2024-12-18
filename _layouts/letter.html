@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="{{ '/assets/css/letter.css' | relative_url }}">
+    </head>
+    <body>
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="{{ site.baseurl }}/">Home</a>
+            <a href="{{ site.baseurl }}/datastory">Data Story</a>
+            <a href="#dear-director" class="indented">Intro</a> <!-- Added class "indented" -->
+            <a href="#popularity-of-movies-vs-books" class="indented">Popularity</a> <!-- Added class "indented" -->
+            <a href="#" class="indented">TODO!</a> <!-- Added class "indented" -->
+        </div>
+
+
+        <div id="main">
+            <button class="openbtn" onclick="openNav()" style="position: fixed; top: 10px; left: 10px;">☰</button>
+
+            <div id="letter">
+                <section>
+                {{ content }}
+                </section>
+                <footer>
+                {% if site.github.is_project_page %}
+                <p>This project is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
+                {% endif %}
+                </footer>
+            </div>
+        
+            <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+            
+            {% if site.google_analytics %}
+                <script>
+                    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+                    ga('create', '{{ site.google_analytics }}', 'auto');
+                    ga('send', 'pageview');
+                </script>
+            {% endif %}
+
+
+        </div>
+
+
+
+        <script>
+     
+
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").classList.add('open-sidebar'); // Add class to shift content
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").classList.remove('open-sidebar'); // Remove class to center content
+        }
+          
+        </script>
+    
+    </body>
+</html>
