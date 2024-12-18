@@ -1,0 +1,227 @@
+<body style="margin: 0; padding: 10px;">
+<div>
+    <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+</div>
+
+<!-- Plotly Chart -->
+<div id="scatterplot"></div>
+
+<script>
+    async function fetchData() {
+        const response = await fetch('regression_dataset_tmdb.csv');
+        const csvText = await response.text();
+        const result = Papa.parse(csvText, {
+            header: true,
+            skipEmptyLines: true,
+            dynamicTyping: true,
+        });
+
+        if (result.errors.length) {
+            console.error("Errors during CSV parsing:", result.errors);
+        }
+
+        let data = result.data;
+
+        // Filter data to only include book-based movies (based_on_book == 1)
+        const based_on_book = data.filter(row => row.based_on_book === "True");
+        const not_based_on_book = data.filter(row => row.based_on_book === "False");
+
+        return [based_on_book, not_based_on_book];
+    }
+
+    // Function to calculate median trends and prepare data
+    function calculateTrends(data, columnName) {
+        const trends = data.map(d => {
+            return {
+                year_group: d.year_group,  // Group by 3-year intervals
+                adjusted_budget: d[columnName],
+            };
+        });
+
+        return trends;
+    }
+
+    // Plot box plot with trends over time
+    function linearRegression(x, y) {
+        const n = x.length;
+        const xMean = d3.mean(x);
+        const yMean = d3.mean(y);
+        const ssXX = d3.sum(x.map(d => Math.pow(d - xMean, 2)));
+        const ssXY = d3.sum(x.map((d, i) => (d - xMean) * (y[i] - yMean)));
+        const slope = ssXY / ssXX;
+        const intercept = yMean - slope * xMean;
+        return {slope, intercept};
+    }
+
+    // Function to generate regression line data
+    function generateRegressionLine(x, slope, intercept) {
+        return x.map(d => slope * d + intercept);
+    }
+
+    function plotBoxWithTrendsOverTime(based_on_book, not_based_on_book, columnName, title, yAxisLabel, yAxisRange) {
+        const trendsBook = calculateTrends(based_on_book, columnName);
+        const trendsNotBook = calculateTrends(not_based_on_book, columnName);
+
+        // Use d3.groups to group the data by 'year_group'
+        const trendDataBook = d3.groups(trendsBook, d => d.year_group)
+            .map(([year, values]) => ({
+                year_group: +year,  // Convert year_group to number
+                median: d3.median(values, d => d[columnName]),
+                mean: d3.mean(values, d => d[columnName]),
+            }))
+            .sort((a, b) => a.year_group - b.year_group);  // Sort by year_group in ascending order
+
+        console.log("first 5 trendDataBook", trendDataBook.slice(0, 5));
+
+        const trendDataNotBook = d3.groups(trendsNotBook, d => d.year_group)
+            .map(([year, values]) => ({
+                year_group: +year,  // Convert year_group to number
+                median: d3.median(values, d => d[columnName]),
+                mean: d3.mean(values, d => d[columnName]),
+            }))
+            .sort((a, b) => a.year_group - b.year_group);  // Sort by year_group in ascending order
+
+        const yearsBook = trendDataBook.map(d => d.year_group);
+        const medianValuesBook = trendDataBook.map(d => d.median);
+        const meanValuesBook = trendDataBook.map(d => d.mean);
+
+        const yearsNotBook = trendDataNotBook.map(d => d.year_group);
+        const medianValuesNotBook = trendDataNotBook.map(d => d.median);
+        const meanValuesNotBook = trendDataNotBook.map(d => d.mean);
+
+        // Calculate regression lines
+        const {slope: slopeBook, intercept: interceptBook} = linearRegression(yearsBook, medianValuesBook);
+        const regressionLineBook = generateRegressionLine(yearsBook, slopeBook, interceptBook);
+
+        const {slope: slopeNotBook, intercept: interceptNotBook} = linearRegression(yearsNotBook, medianValuesNotBook);
+        const regressionLineNotBook = generateRegressionLine(yearsNotBook, slopeNotBook, interceptNotBook);
+
+        // Mean trend
+        const meanTrendBook = {
+            type: 'scatter',
+            x: yearsBook,
+            y: meanValuesBook,
+            mode: 'lines+markers',
+            name: 'Means (BOB)',
+            line: {color: '#332288', width: 2, dash: 'dash'},
+            visible: 'legendonly'
+        };
+
+        // Median trend
+        const medianTrendBook = {
+            type: 'scatter',
+            x: yearsBook,
+            y: medianValuesBook,
+            mode: 'lines+markers',
+            name: 'Medians (BOB)',
+            line: {color: '#AA4499', width: 2},
+        };
+
+        // Regression lines
+        const regressionTrendBook = {
+            type: 'scatter',
+            x: yearsBook,
+            y: regressionLineBook,
+            mode: 'lines',
+            name: 'LR on Medians (BOB)',
+            line: {color: '#CC6677', width: 2},
+        };
+
+
+        const meanTrendNotBook = {
+            type: 'scatter',
+            x: yearsNotBook,
+            y: meanValuesNotBook,
+            mode: 'lines+markers',
+            name: 'Means (NOB)',
+            line: {color: '#117733', width: 2, dash: 'dash'},
+            visible: 'legendonly'
+        };
+
+        const medianTrendNotBook = {
+            type: 'scatter',
+            x: yearsNotBook,
+            y: medianValuesNotBook,
+            mode: 'lines+markers',
+            name: 'Medians (NOB)',
+            line: {color: '#44AA99', width: 2},
+        };
+
+        const regressionTrendNotBook = {
+            type: 'scatter',
+            x: yearsNotBook,
+            y: regressionLineNotBook,
+            mode: 'lines',
+            name: 'LR on Medians (NOB)',
+            line: {color: '#88CCEE', width: 2},
+        };
+
+        const layout = {
+            title: title,
+            xaxis: {title: 'Year Group'},
+            yaxis: {title: yAxisLabel, range: yAxisRange},
+            autosize: true,  // Automatically resize the plot
+            showlegend: true,
+            legend: {
+                x: 0.01,
+                y: 1,
+                xanchor: 'left',
+                yanchor: 'top',
+                bgcolor: 'rgba(255, 255, 255, 0.5)'  // Set background color with transparency
+            }
+        };
+
+        // Create the plot
+        Plotly.newPlot('scatterplot', [meanTrendBook, medianTrendBook, regressionTrendBook, meanTrendNotBook, medianTrendNotBook, regressionTrendNotBook], layout);
+    }
+
+    async function initPlot() {
+        const [based_on_book, not_based_on_book] = await fetchData();
+        plotBoxWithTrendsOverTime(
+            based_on_book,
+            not_based_on_book,
+            'adjusted_budget',
+            'Inflation-Adjusted Budget of BOBs and NOBs over Time',
+            'Inflation-Adjusted Budget',
+            [0, 6e7]
+        );
+    }
+
+    // Initialize the plot
+    initPlot();
+</script>
+
+
+<!-- Place the script before the closing body tag -->
+<script>
+    // Debounce function to limit the rate at which a function is executed
+    function debounce(func, wait) {
+        let timeout;
+        return function(...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    // Function to simulate the click on the reset button
+    function simulateResetClick() {
+        // Select the reset button using a unique attribute or class
+        const resetButton = document.querySelector('a[data-title="Reset axes"]');
+
+        // Check if the element exists
+        if (resetButton) {
+            resetButton.click();
+        }
+    }
+
+    // Add event listener for screen resizing with debounce
+    window.addEventListener('resize', debounce(function () {
+        // Simulate the click on the reset button on resize
+        simulateResetClick();
+    }, 300)); // Adjust the debounce delay as needed (300ms in this example)
+</script>
+
+</body>
