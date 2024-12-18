@@ -11,6 +11,8 @@
       height: 100vh; /* Full viewport height */
       width: 100vw; /* Full viewport width */
       position: relative; /* Reference point for positioning */
+      overflow: hidden; /* Hide anything outside the body */
+      transition: transform 2s ease, opacity 2s ease; /* Smooth transition for zoom-in and fade-out */
     }
     img {
       display: block;
@@ -18,17 +20,16 @@
       height: 100%;
       object-fit: cover; /* Scale the image without distortion */
       position: absolute;
+      z-index: 0; /* Background behind everything else */
     }
     .clickable-area {
       position: absolute;
-      top: 55%; /* Adjust this value to move the rectangle lower */
-      left: 55%; /* Horizontally center */
+      top: 60%; /* Adjust this value to move the rectangle lower */
+      left: 62%; /* Horizontally center */
       width: 15%; /* Adjust the width of the rectangle */
       height: 15%; /* Adjust the height of the rectangle */
       background: transparent;
       border: none;
-      /*border: 3px solid red;  Red border for visibility */
-      /*background-color: rgba(255, 0, 0, 0.3); /* Semi-transparent red for visibility */
       cursor: pointer; /* Change cursor to pointer for interactivity */
       transform: translate(-50%, -50%); /* Center the rectangle relative to its top-left corner */
       z-index: 10; /* Ensure it appears above the image */
@@ -44,17 +45,74 @@
       z-index: 15; /* Ensure the title is above the image and rectangle */
       font-family: Arial, sans-serif; /* Choose a readable font */
     }
+
+    /* Style for video */
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5; /* Place it above the image */
+      overflow: hidden;
+      display: none; /* Hide initially */
+    }
+
+    .letter-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   </style>
 </head>
 <body>
   <!-- Full-page background image -->
-  <img src="assets/img/website_entry.png" alt="Decorative Image">
+  <img src="assets/img/Untitled design.png" alt="Decorative Image">
 
   <!-- Title on the image -->
-  <div class="title">Click The Letter to see what we wrote to the Director</div>
+  <div class="title" id="title">Open (Click) The Letter on the Table to see what we wrote to the Director</div>
+
+  <!-- Video container (hidden initially) -->
+  <div class="video-container" id="video-container">
+    <video id="letter-video" class="letter-video" preload="auto" playsinline>
+      <source src="assets/img/ada_animation_final.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
 
   <!-- Adjusted clickable area -->
-  <a href="datastory" class="clickable-area" title="Clickable Letter"></a>
+  <a href="javascript:void(0);" class="clickable-area" title="Clickable Letter" id="clickable-area"></a>
+
+  <script>
+    // Get elements
+    const clickableArea = document.getElementById('clickable-area');
+    const videoContainer = document.getElementById('video-container');
+    const letterVideo = document.getElementById('letter-video');
+    const title = document.getElementById('title');
+    const body = document.body;
+
+    // Add click event to clickable area
+    clickableArea.addEventListener('click', () => {
+      title.style.display = 'none'; // Hide the title
+      // Show the video container and play the video
+      videoContainer.style.display = 'block';
+      letterVideo.play();
+
+      // Disable the clickable area to prevent multiple clicks
+      clickableArea.style.pointerEvents = 'none';
+
+      // After the video ends, apply zoom and fade-out effect to both video and background, then redirect
+      letterVideo.addEventListener('ended', () => {
+        // Apply zoom-in and fade-out effect to both the video and the background
+        body.style.transform = 'scale(1.5)'; // Zoom in
+        body.style.opacity = '0'; // Fade out the entire page (background + video)
+
+        // Redirect after the animation
+        setTimeout(() => {
+          window.location.href = 'datastory'; // Redirect to the new page
+        }, 2000); // Wait for 2 seconds (same as transition time)
+      });
+    });
+  </script>
 </body>
 </html>
-
