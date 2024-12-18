@@ -193,7 +193,9 @@
         if (currentQuestion === movies.length - 1) {
             document.getElementById('nextButton').style.display = "none";
             document.getElementById('repeatButton').style.display = "inline-block";
-            summaryDiv.innerHTML = `You finished the Quiz! You got ${correctAnswers} out of ${movies.length} correct.`;
+            summaryDiv.innerHTML = `
+                <h2>You finished the Quiz! You got ${correctAnswers} out of ${movies.length} correct.</h2>
+            `;
         } else {
             // Show "Next Question" button if there are more questions
             document.getElementById('nextButton').style.display = "inline-block";
