@@ -8,7 +8,6 @@ body {
     transition: transform 2s ease, opacity 2s ease; /* Smooth transition for zoom-in and fade-out */
 }
 
-
 .sidebar {
     height: 100%;
     width: 0;
