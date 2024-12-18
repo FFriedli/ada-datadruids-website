@@ -74,9 +74,7 @@
             }))
             .sort((a, b) => a.year_group - b.year_group);  // Sort by year_group in ascending order
 
-        console.log("first 5 trendDataBook", trendDataBook.slice(0, 5));
-
-        const trendDataNotBook = d3.groups(trendsNotBook, d => d.year_group)
+            const trendDataNotBook = d3.groups(trendsNotBook, d => d.year_group)
             .map(([year, values]) => ({
                 year_group: +year,  // Convert year_group to number
                 median: d3.median(values, d => d[columnName]),

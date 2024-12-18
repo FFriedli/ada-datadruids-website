@@ -64,6 +64,15 @@
           
         </script>
 
+        <script>
+            window.addEventListener('popstate', function (event) {
+                console.log('popstate event:', event);
+                // Custom behavior when the back button is pressed
+                window.location.href = '/datastory'; // Replace with your desired URL
+            });
+
+        </script>
+
 
         <!-- Other content here -->
 
