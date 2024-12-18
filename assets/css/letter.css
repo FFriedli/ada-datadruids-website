@@ -70,10 +70,31 @@ body {
     margin: 0 auto;
     width: 100%; /* Default full width when sidebar is closed */
 }
+/* Ensure content is centered when sidebar is closed */
+#start-main {
+    transition: margin-left .5s, width .5s;
+    /*padding: 16px;*/
+    /*display: flex;*/
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    height: 100%;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%; /* Default full width when sidebar is closed */
+}
+
+#start-main.open-sidebar {
+    margin-left: 250px; /* Same as sidebar width */
+    width: calc(100% - 250px); /* Ensure content fills the remaining space */
+    transition: margin-left .5s;
+}
 
 
 #letter {
     width: 90%;
+    max-width: 1500px;
     background: #fbf7e9;
     border: 1px solid #e2d4b7;
     padding: 3rem;
@@ -88,6 +109,18 @@ body {
             #e2d4b7 25px
     ); /* Horizontal lines on the paper */
     background-size: 100% 25px;
+}
+
+#start-site {
+    width: 100%;
+    /*max-width: 1500px;*/
+    /*background: #fbf7e9;*/
+    /*border: 1px solid #e2d4b7;*/
+    /*padding: 3rem;*/
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+    /*border-radius: 5px;*/
+    /*line-height: 2;*/
+    /*position: relative;*/
 }
 
 
@@ -176,3 +209,85 @@ p {
     font-weight: 400; /* <weight>: Use a value from 400 to 700 */
     font-style: normal;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
+start-page-body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Reference point for positioning */
+    overflow: hidden; /* Hide anything outside the body */
+    transition: transform 2s ease, opacity 2s ease; /* Smooth transition for zoom-in and fade-out */
+}
+
+
+
+.clickable-area {
+    position: absolute;
+    top: 60%; /* Adjust this value to move the rectangle lower */
+    left: 62%; /* Horizontally center */
+    width: 15%; /* Adjust the width of the rectangle */
+    height: 15%; /* Adjust the height of the rectangle */
+    background: transparent;
+    border: none;
+    cursor: pointer; /* Change cursor to pointer for interactivity */
+    transform: translate(-50%, -50%); /* Center the rectangle relative to its top-left corner */
+    z-index: 10; /* Ensure it appears above the image */
+}
+
+.clickable-area.open-sidebar {
+    margin-left: 250px; /* Same as sidebar width */
+    /*width: calc(100% - 250px); !* Ensure content fills the remaining space *!*/
+}
+
+.title {
+    position: absolute;
+    top: 20%; /* Adjust vertical position of the title */
+    width: 100%; /* Make the title span full width */
+    text-align: center; /* Center the text */
+    font-size: 3rem; /* Adjust font size */
+    color: white; /* White text for contrast */
+    text-shadow: 2px 2px 5px black; /* Add a shadow for readability */
+    z-index: 15; /* Ensure the title is above the image and rectangle */
+    font-family: Arial, sans-serif; /* Choose a readable font */
+}
+
+.title.open-sidebar {
+    /*margin-left: 250px; !* Same as sidebar width *!*/
+    /*transition: margin-left .5s; !* Smooth transition *!*/
+    width: calc(100% - 250px);
+}
+
+/* Style for video */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5; /* Place it above the image */
+    overflow: hidden;
+    display: none; /* Hide initially */
+}
+
+.letter-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
