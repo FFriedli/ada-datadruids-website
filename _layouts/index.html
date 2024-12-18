@@ -114,6 +114,9 @@
             window.location.href = document.getElementById('redirect-url').getAttribute('data-url'); // Redirect to the new page
             body.style.transform = 'scale(1)'; // Reset zoom
             body.style.opacity = '1'; // Reset opacity
+            videoContainer.style.display = 'none'; // Hide the video container
+            title.style.display = 'block'; // Show the title
+            clickableArea.style.pointerEvents = 'auto'; // Enable clickable area
         }, 2000); // Wait for 2 seconds (same as transition time)
       });
     });
