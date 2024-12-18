@@ -1,8 +1,11 @@
 body {
-    font-family: "Lato", sans-serif;
-    background-image: url('./../img/Untitled design.png'); /* Use relative_url for GitHub Pages */
-    /*transition: transform 2s ease, opacity 2s ease; !* Smooth transition for zoom-in and fade-out *!*/
-
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    position: relative; /* Reference point for positioning */
+    overflow: hidden; /* Hide anything outside the body */
+    transition: transform 2s ease, opacity 2s ease; /* Smooth transition for zoom-in and fade-out */
 }
 
 
@@ -73,6 +76,7 @@ body {
     margin: 0 auto;
     width: 100%; /* Default full width when sidebar is closed */
 }
+
 /* Ensure content is centered when sidebar is closed */
 #start-main {
     transition: margin-left .5s, width .5s;
@@ -212,19 +216,6 @@ p {
     font-weight: 400; /* <weight>: Use a value from 400 to 700 */
     font-style: normal;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**/

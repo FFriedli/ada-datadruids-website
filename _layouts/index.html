@@ -5,8 +5,9 @@
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
   <title>Full-Page Image with Highlighted Clickable Area</title>
 
-    <link rel="stylesheet" href='/assets/css/letter.css'>
+<!--    <link rel="stylesheet" href='/assets/css/letter.css'>-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/index.css' | relative_url }}">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -14,18 +15,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&display=swap"
           rel="stylesheet">
 
-    <style>
-        img {
-            display: block;
-            width: 100%;
-            height: 100vh; /* Full viewport height */
-            object-fit: cover; /* Scale the image without distortion */
-            position: absolute;
-            z-index: 0; /* Background behind everything else */
-        }
-    </style>
+
+
 </head>
-<body class="start-page-body">
+<body>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavHomeScreen()">×</a>
         <a href="/">Home</a>
@@ -36,7 +29,7 @@
 
         <div id="start-site">
 <!--            <section>-->
-                <img src="assets/img/Untitled design.png" alt="Decorative Image" height="100%", width="100%">
+                <img src="{{ '/assets/img/Untitled design.png' | relative_url }}" alt="Decorative Image" class="start-page-img" height="100%", width="100%">
 
                 <button class="openbtn" onclick="openNavHomeScreen()" style="position: fixed; top: 10px; left: 10px;">☰</button>
 
@@ -48,7 +41,7 @@
                 <!-- Video container (hidden initially) -->
                 <div class="video-container" id="video-container">
                     <video id="letter-video" class="letter-video" preload="auto" playsinline>
-                        <source src="assets/img/ada_animation_final.mp4" type="video/mp4">
+                        <source src="{{ '/assets/img/ada_animation_final.mp4' | relative_url }}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -58,7 +51,7 @@
 <!--            </section>-->
         </div>
 
-        <script src="/assets/js/scale.fix.js"></script>
+        <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
 
         {% if site.google_analytics %}
             <script>
@@ -91,13 +84,18 @@
     const videoContainer = document.getElementById('video-container');
     const letterVideo = document.getElementById('letter-video');
     const title = document.getElementById('title');
+    // const body = document.body;
     const body = document.body;
+
+    console.log("body is: ", body);
 
     // Add click event to clickable area
     clickableArea.addEventListener('click', () => {
+        console.log('clickable area clicked');
       title.style.display = 'none'; // Hide the title
       // Show the video container and play the video
       videoContainer.style.display = 'block';
+        console.log("video is: ", letterVideo);
       letterVideo.play();
 
       // Disable the clickable area to prevent multiple clicks
@@ -105,13 +103,14 @@
 
       // After the video ends, apply zoom and fade-out effect to both video and background, then redirect
       letterVideo.addEventListener('ended', () => {
+          console.log('video ended');
         // Apply zoom-in and fade-out effect to both the video and the background
         body.style.transform = 'scale(1.5)'; // Zoom in
         body.style.opacity = '0'; // Fade out the entire page (background + video)
 
         // Redirect after the animation
         setTimeout(() => {
-          window.location.href = 'datastory'; // Redirect to the new page
+          window.location.href = '/datastory'; // Redirect to the new page
         }, 2000); // Wait for 2 seconds (same as transition time)
       });
     });
