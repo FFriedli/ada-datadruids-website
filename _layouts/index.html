@@ -110,7 +110,7 @@
 
         // Redirect after the animation
         setTimeout(() => {
-          window.location.href = '/datastory'; // Redirect to the new page
+            window.location.href = "{{ '/datastory' | relative_url }}"; // Redirect to the new page
         }, 2000); // Wait for 2 seconds (same as transition time)
       });
     });
@@ -141,7 +141,7 @@
         window.addEventListener('popstate', function (event) {
             console.log('popstate event:', event);
             // Custom behavior when the back button is pressed
-            window.location.href = '/datastory'; // Replace with your desired URL
+            window.location.href = "{{ '/datastory' | relative_url }}"; // Replace with your desired URL
         });
 
     </script>
