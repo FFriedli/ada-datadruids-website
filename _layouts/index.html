@@ -21,8 +21,8 @@
 <body>
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNavHomeScreen()">×</a>
-        <a href="/">Home</a>
-        <a href="/datastory">Data Story</a>
+        <a href="{{ '/' | relative_url }}">Home</a>
+        <a href="{{ '/datastory' | relative_url }}">Data Story</a>
     </div>
 
     <div id="start-main">
@@ -76,9 +76,10 @@
 
 
     <!-- Full-page background image -->
+    <div id="redirect-url" data-url="{{ '/datastory' | relative_url }}"></div>
 
 
-  <script>
+    <script>
     // Get elements
     const clickableArea = document.getElementById('clickable-area');
     const videoContainer = document.getElementById('video-container');
@@ -110,7 +111,7 @@
 
         // Redirect after the animation
         setTimeout(() => {
-            window.location.href = "{{ '/datastory' | relative_url }}"; // Redirect to the new page
+            window.location.href = document.getElementById('redirect-url').getAttribute('data-url'); // Redirect to the new page
         }, 2000); // Wait for 2 seconds (same as transition time)
       });
     });
@@ -137,13 +138,13 @@
 
     </script>
 
-    <script>
-        window.addEventListener('popstate', function (event) {
-            console.log('popstate event:', event);
-            // Custom behavior when the back button is pressed
-            window.location.href = "{{ '/datastory' | relative_url }}"; // Replace with your desired URL
-        });
+<!--    <script>-->
+<!--        window.addEventListener('popstate', function (event) {-->
+<!--            console.log('popstate event:', event);-->
+<!--            // Custom behavior when the back button is pressed-->
+<!--            window.location.href = '/datastory'; // Replace with your desired URL-->
+<!--        });-->
 
-    </script>
+<!--    </script>-->
 </body>
 </html>
