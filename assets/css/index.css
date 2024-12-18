@@ -232,7 +232,7 @@ start-page-body {
 .clickable-area {
     position: absolute;
     top: 60%; /* Adjust this value to move the rectangle lower */
-    left: 62%; /* Horizontally center */
+    left: 55%; /* Horizontally center */
     width: 30%; /* Adjust the width of the rectangle */
     height: 20%; /* Adjust the height of the rectangle */
     background: transparent;
