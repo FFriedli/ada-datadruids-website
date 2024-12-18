@@ -1,8 +1,9 @@
-<body style="margin: 0; padding: 10px;">
+<body style="margin: 0; padding: 20px;">
 <div>
     <script src="https://cdn.plot.ly/plotly-2.20.0.min.js"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.2/papaparse.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </div>
 
@@ -172,6 +173,7 @@
             title: title,
             xaxis: {title: 'Year Group'},
             yaxis: {title: yAxisLabel, range: yAxisRange},
+            autosize: true,  // Automatically resize the plot
             showlegend: true,
             legend: {
                 x: 0.01,
@@ -200,4 +202,30 @@
     // Initialize the plot
     initPlot();
 </script>
+
+
+<!-- Place the script before the closing body tag -->
+<script>
+    // Function to simulate the click on the reset button
+    function simulateResetClick() {
+
+        console.log("Simulating reset click");
+        console.log("doczm: ", document);
+        // Select the reset button using a unique attribute or class
+        const resetButton = document.querySelector('a[data-title="Reset axes"]');
+
+        console.log("Reset button: ", resetButton);
+        // Check if the element exists
+        if (resetButton) {
+            resetButton.click();
+        }
+    }
+
+    // Add event listener for screen resizing
+    window.addEventListener('resize', function () {
+        // Simulate the click on the reset button on resize
+        simulateResetClick();
+    });
+</script>
+
 </body>

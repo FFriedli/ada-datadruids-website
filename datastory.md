@@ -26,11 +26,11 @@ blockbuster.
 ## Why to base the movie on a Book
 
 ### Revenue-Budget Difference of Movies vs books
-<iframe src="assets/plots/revenue-budjet_over_time_try.html" width="100%" height="650px" style="border:none;"></iframe>
+<iframe src="assets/plots/revenue-budjet_over_time_try.html" width="100%" height="500px" style="border:none;"></iframe>
 
 ### Popularity of Movies vs books
 
-<iframe src="assets/plots/popularity_over_time_js.html" width="100%" height="650px" style="border:none;"></iframe>
+<iframe src="assets/plots/popularity_over_time_js.html" width="100%" height="500px" style="border:none;"></iframe>
 
 
 [//]: # (<iframe src="assets/plots/Revenue - Budget of Book-Based vs. not Book-Based Movies_overlay.html" width="100%" height="620px" style="border:none;"></iframe>)

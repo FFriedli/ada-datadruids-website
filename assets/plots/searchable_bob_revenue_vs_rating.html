@@ -210,4 +210,30 @@
     // Initialize the plot
     initPlot();
 </script>
+
+
+<!-- Place the script before the closing body tag -->
+<script>
+    // Function to simulate the click on the reset button
+    function simulateResetClick() {
+
+        console.log("Simulating reset click");
+        console.log("doczm: ", document);
+        // Select the reset button using a unique attribute or class
+        const resetButton = document.querySelector('a[data-title="Reset axes"]');
+
+        console.log("Reset button: ", resetButton);
+        // Check if the element exists
+        if (resetButton) {
+            resetButton.click();
+        }
+    }
+
+    // Add event listener for screen resizing
+    window.addEventListener('resize', function () {
+        // Simulate the click on the reset button on resize
+        simulateResetClick();
+    });
+</script>
+
 </body>
