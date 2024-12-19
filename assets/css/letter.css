@@ -84,7 +84,7 @@ body {
     flex-direction: column;
     max-width: 90%;
     margin: 0 auto;
-    margin-left: 0;
+    margin-left: 5%;
     width: 100%; /* Default full width when sidebar is closed */
 }
 /* Ensure content is centered when sidebar is closed */
