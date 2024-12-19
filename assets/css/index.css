@@ -88,13 +88,13 @@ body {
     flex-direction: column;
     max-width: 100%;
     margin: 0 auto;
+    margin-left: 0;
     width: 100%; /* Default full width when sidebar is closed */
 }
 
 #start-main.open-sidebar {
     margin-left: 250px; /* Same as sidebar width */
     width: calc(100% - 250px); /* Ensure content fills the remaining space */
-    transition: margin-left .5s;
 }
 
 
