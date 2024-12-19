@@ -3,14 +3,12 @@ body {
     /*background-image: url('./../img/Untitled design.png'); !* Use relative_url for GitHub Pages *!*/
     /*transition: transform 2s ease, opacity 2s ease; !* Smooth transition for zoom-in and fade-out *!*/
 
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    height: 100%;
-    flex-direction: column;
-    max-width: 100%;
-    margin: 0 auto;
-    width: 100%;
+    background-image: url('./../img/Untitled design.png'); /* Use relative_url for GitHub Pages */
+    background-size: cover; /* Ensure the background image covers the whole screen */
+    background-attachment: fixed; /* Keep the background image fixed when scrolling */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+
 }
 
 
