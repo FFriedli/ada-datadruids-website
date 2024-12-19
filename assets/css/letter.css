@@ -103,7 +103,7 @@ body {
 /*}*/
 
 #start-main.open-sidebar {
-    margin-left: 250px; /* Same as sidebar width */
+    margin: 0 auto 0 250px; /* Same as sidebar width */
     width: calc(100% - 250px); /* Ensure content fills the remaining space */
     transition: margin-left .5s;
 }
