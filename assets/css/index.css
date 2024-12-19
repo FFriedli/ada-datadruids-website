@@ -252,7 +252,7 @@ start-page-body {
     top: 20%; /* Adjust vertical position of the title */
     width: 100%; /* Make the title span full width */
     text-align: center; /* Center the text */
-    font-size: 3.5rem; /* Adjust font size */
+    font-size: 2.5rem; /* Adjust font size */
     color: white; /* White text for contrast */
     text-shadow: 2px 2px 5px black; /* Add a shadow for readability */
     z-index: 15; /* Ensure the title is above the image and rectangle */
@@ -264,7 +264,7 @@ start-page-body {
     top: 40%; /* Position it in the middle vertically */
     width: 100%; /* Make the title span full width */
     text-align: center; /* Center the text */
-    font-size: 2.5rem; /* Adjust font size as needed */
+    font-size: 1.5rem; /* Adjust font size as needed */
     color: white; /* Ensure the subtitle text is readable */
     text-shadow: 2px 2px 5px black; /* Add a shadow for readability */
     z-index: 15; /* Ensure the title is above the image and rectangle */
