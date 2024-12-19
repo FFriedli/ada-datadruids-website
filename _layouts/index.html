@@ -89,6 +89,7 @@
     const videoContainer = document.getElementById('video-container');
     const letterVideo = document.getElementById('letter-video');
     const title = document.getElementById('title');
+    const subtitle = document.getElementById('subtitle');
     // const body = document.body;
     const body = document.body;
 
@@ -98,6 +99,7 @@
     clickableArea.addEventListener('click', () => {
         console.log('clickable area clicked');
       title.style.display = 'none'; // Hide the title
+        subtitle.style.display = 'none'; // Hide the title
       // Show the video container and play the video
       videoContainer.style.display = 'block';
         console.log("video is: ", letterVideo);
@@ -125,6 +127,7 @@
 
               videoContainer.style.display = 'none'; // Hide the video container
               title.style.display = 'block'; // Show the title
+              subtitle.style.display = 'block'; // Show the title
               clickableArea.style.pointerEvents = 'auto'; // Enable clickable area
           }, 2500); // Wait for 2.1 seconds
       });
