@@ -3,7 +3,6 @@ layout: letter
 ---
 
 
-
 # Dear Director,
 
 Imagine this: a packed theater, audiences glued to their seats, so captivated by the movie that they forget about their
