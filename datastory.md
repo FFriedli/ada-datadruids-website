@@ -58,7 +58,7 @@ of revenue and ratings, are the Lord of the Rings, and to no one's surprise they
 in the graph below? Can you find any other of your favorite Bobs?
 
 <div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/searchable_bob_revenue_vs_rating.html" 
+    <iframe src="assets/plots/searchable_bob_revenue_vs_rating_js.html" 
             width="100%" 
             height="500vh" 
             style="border:none; max-width: 1200px;">
@@ -111,7 +111,7 @@ they made?
 
 
 <div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/revenue-budjet_over_time_try.html" 
+    <iframe src="assets/plots/adj_revenue_budget_over_time_js.html" 
             width="100%" 
             height="450vh" 
             style="border:none; max-width: 1200px;">
