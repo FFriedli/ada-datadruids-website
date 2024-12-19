@@ -87,6 +87,7 @@ body {
     margin-left: 5%;
     width: 100%; /* Default full width when sidebar is closed */
 }
+
 /* Ensure content is centered when sidebar is closed */
 #start-main {
     transition: margin-left .5s, width .5s;
