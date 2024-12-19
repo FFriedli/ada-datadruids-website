@@ -34,8 +34,12 @@
                 <button class="openbtn" onclick="openNavHomeScreen()" style="position: fixed; top: 10px; left: 10px;">☰</button>
 
                 <!-- Title on the image -->
-                <div class="title" id="title">Open (Click) The Letter on the Table to see what we wrote to the
-                    Director
+                <!-- Title on the image -->
+                <div class="title" id="title">
+                    Finding the next Lord of the Rings: From Book to Cinematic Glory
+                </div>
+                <div class="subtitle" id="subtitle">
+                    Open (Click) The Letter on the Table to see what we wrote to the Director
                 </div>
 
                 <!-- Video container (hidden initially) -->
@@ -136,6 +140,7 @@
             document.getElementById("start-main").classList.add('open-sidebar'); // Add class to shift title
             document.getElementById("clickable-area").classList.add('open-sidebar'); // Add class to shift clickable area
             document.getElementById("title").classList.add('open-sidebar'); // Add class to shift title
+            document.getElementById("subtitle").classList.add('open-sidebar'); // Add class to shift title
         }
 
         function closeNavHomeScreen() {
@@ -144,6 +149,7 @@
             document.getElementById("start-main").classList.remove('open-sidebar'); // Remove class to shift title
             document.getElementById("clickable-area").classList.remove('open-sidebar'); // Remove class to shift clickable area
             document.getElementById("title").classList.remove('open-sidebar'); // Remove class to shift title
+            document.getElementById("subtitle").classList.remove('open-sidebar'); // Remove class to shift title
         }
 
     </script>
