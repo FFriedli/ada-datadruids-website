@@ -97,7 +97,7 @@ Example with custom html :
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/zzz_check_with_html_self_code_222.html" 
             width="100%" 
-            height="450vh" 
+            height="550vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
