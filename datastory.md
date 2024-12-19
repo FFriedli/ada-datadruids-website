@@ -91,28 +91,13 @@ always used an inflation-adjusted scale for all money related things.
     </iframe>
 </div>
 
-<div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/zzz_test_autosize.html" 
-            width="100%" 
-            height="450vh" 
-            style="border:none; max-width: 1200px;">
-    </iframe>
-</div>
 
-custom html:
-<div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/zzz_check_with_html_self_code.html" 
-            width="800px" 
-            height="950vh" 
-            style="border:none; max-width: 1200px;">
-    </iframe>
-</div>
 
-aaaaaaaaaaaaaaaaaaaa custom html:
+Example with custom html :
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/zzz_check_with_html_self_code_222.html" 
-            width="800px" 
-            height="950vh" 
+            width="100%" 
+            height="450vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
