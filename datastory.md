@@ -91,6 +91,32 @@ always used an inflation-adjusted scale for all money related things.
     </iframe>
 </div>
 
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/zzz_test_autosize.html" 
+            width="100%" 
+            height="450vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
+
+custom html:
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/zzz_check_with_html_self_code.html" 
+            width="800px" 
+            height="950vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
+
+aaaaaaaaaaaaaaaaaaaa custom html:
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/zzz_check_with_html_self_code_222.html" 
+            width="800px" 
+            height="950vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
+
 We can already see that while both revenues for Bobs and Nobs increase over time, Bobs have always made more money than
 Nobs.
 However, this simple analysis does not reliably show whether the observed trend is simply due to the Bobs being based on
