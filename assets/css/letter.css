@@ -7,6 +7,13 @@ body {
     background-attachment: fixed; /* Keep the background image fixed when scrolling */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background image from repeating */
+    backdrop-filter: blur(10px); /* Add a blur effect to the background */
+    overflow: hidden;
+}
+
+.scrollable-letter{
+    overflow: auto;
+    height: 100vh;
 }
 
 .sidebar {
@@ -44,6 +51,9 @@ body {
 }
 
 .openbtn {
+    position: fixed; /* Fix the button to the viewport */
+    top: 10px; /* Position it near the top */
+    left: 10px; /* Position it near the left edge */
     font-size: 20px;
     cursor: pointer;
     background-color: #111;
