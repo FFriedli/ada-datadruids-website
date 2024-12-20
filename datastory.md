@@ -226,13 +226,11 @@ Sincerely, <br>
 The Dütschschwizer Datadruids 
 
 
-<div style="display: flex; justify-content: center; align-items: flex-start; gap: 45%; margin: 2rem 0;">
-    <img src="assets/img/signatures.png" 
-         style="height: 130px; width: auto; object-fit: contain; align-self: center; margin-top: 20px;" 
-         alt="Image 1">
-    <img src="assets/img/stempfel.png" 
-         style="height: 200px; width: auto; object-fit: contain; margin-left: -10%;" 
-         alt="Image 2">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 40px">
+    <div></div>
+    <img src="assets/img/signatures.png" alt="Signatures of the group" style="max-height: 20vh; max-width: 50%; height: auto;">
+    <img src="assets/img/stempfel.png"
+        style="max-height: 10vh; max-width: 50%; height: auto; object-fit: contain;"
+        alt="Image 2">
 </div>
-
 
