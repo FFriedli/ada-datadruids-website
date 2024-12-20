@@ -91,17 +91,6 @@ always used an inflation-adjusted scale for all money related things.
     </iframe>
 </div>
 
-
-
-Example with custom html :
-<div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/zzz_check_with_html_self_code_222.html" 
-            width="100%" 
-            height="550vh" 
-            style="border:none; max-width: 1200px;">
-    </iframe>
-</div>
-
 We can already see that while both revenues for Bobs and Nobs increase over time, Bobs have always made more money than
 Nobs.
 However, this simple analysis does not reliably show whether the observed trend is simply due to the Bobs being based on
@@ -148,7 +137,7 @@ While the name “random decision forest” sounds spooky, its working principle
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/regression.html" 
             width="100%" 
-            height="450vh" 
+            height="500vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
@@ -156,7 +145,7 @@ While the name “random decision forest” sounds spooky, its working principle
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/random_forest_importances.html" 
             width="100%" 
-            height="450vh" 
+            height="500vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
@@ -195,7 +184,7 @@ Now that we have hopefully convinced you of doing a Bob for your next blockbuste
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/reg_books.html" 
             width="100%" 
-            height="450vh" 
+            height="500vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
@@ -203,7 +192,7 @@ Now that we have hopefully convinced you of doing a Bob for your next blockbuste
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/forest_books.html" 
             width="100%" 
-            height="450vh" 
+            height="500vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
@@ -228,14 +217,14 @@ Contrary to what has been done so far, this part cannot be derived by features l
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/reg_books_movies.html" 
             width="100%" 
-            height="450vh" 
+            height="500vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/forest_books_movies.html" 
             width="100%" 
-            height="450vh" 
+            height="500vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
@@ -260,7 +249,7 @@ The small amount of data leaves us with a little dilemma. Including the Bobs wit
 ---
 
 
-### Popularity of Movies vs books
+### Popularity of Movies vs Books
 
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/popularity_over_time_js.html" 

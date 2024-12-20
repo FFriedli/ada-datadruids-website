@@ -209,7 +209,12 @@ p {
 
 .sidebar .indented {
     padding-left: 50px; /* Adjust this value to control the level of indentation */
+    font-size: 1.2em;
+
 }
+
+/*.indented {*/
+/*}*/
 
 
 /*.responsive-iframe {*/
