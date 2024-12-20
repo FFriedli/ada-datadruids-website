@@ -234,19 +234,6 @@ In the quest of helping you decide what book to choose and general insights on h
 
 The small amount of data leaves us with a little dilemma. Including the Bobs with fewer siblings leaves us with more overall data but the individual families are less meaningful whereas only looking at big families drains our overall data even more. Nonetheless there are certain trends visible throughout all possible arrangements. The best performing movies tend to be longer, older and more similar to the book than their siblings. This is very good news as this allows you to express yourself without having to worry too much about your creation being too long. Furthermore you can focus on the filmographic aspects of the production as the plot is already well established by the chosen book. Lastly we would recommend to choose a book which hasn’t yet been adapted as your version will then forever be the oldest one available.
 
----
-
-
-## Popularity of Movies vs Books
-
-<div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/popularity_over_time_js.html" 
-            width="100%" 
-            height="450vh" 
-            style="border:none; max-width: 1200px;">
-    </iframe>
-</div>
-
 
 
 
