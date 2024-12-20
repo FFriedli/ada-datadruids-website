@@ -232,5 +232,6 @@ The Dütschschwizer Datadruids
     <img src="assets/img/stempfel.png"
         style="max-height: 10vh; max-width: 50%; height: auto; object-fit: contain;"
         alt="Image 2">
+    <div></div>
 </div>
 
