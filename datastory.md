@@ -160,7 +160,7 @@ Overall, taking only the book features leads to a higher error in predictions an
 Linear regression seems to not capture the influence of a high 3 star percentage in ratings for the book. If we look at the SHAP values of 3 star ratings we can see that a mediocre book (meaning a high percentage in 3 star ratings) makes for a bad movie. A high percentage in 5 star ratings on the other hand has a positive influence on the success of its Bob. Another important factor for success is the genre of the book. Some book genres seem to be more suitable for Bobs than others. We suggest you should choose either your favorite Adventures or Thrillers book to increase your chances of making a successful Bob. And last but not least, people tend to love sequels. Choosing a book that is part of a series will certainly increase your chances of making the next Lord of the Rings.
 
 
-## How to adapt the book ?
+## How to adapt the book?
 
 
 The first step of selecting the right book has been taken, but what now? Should your movie try to do some creative interpretation of the book or just follow it as closely as possible? Is it important that the overall feeling of the book is kept or can a change in scenery help distancing the movie from the book? 
