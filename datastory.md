@@ -168,10 +168,15 @@ matching parameters
 Since no two movies will have the same genres, runtimes, and ratings, the task of finding two identical movies is doomed from the get go. One way of avoiding this doom is to create a propensity score. Merriam-Webster defines Propensity as “an often intense natural inclination or preference”, in this case - a natural inclination to make heaps of money. This propensity score combines all important confounders to generate one feature on which movies can then be matched, a feature that measures their preconditions for success. Wait, why are we doing this again? Right, movies with the same preconditions can be matched and compared. We have already introduced you to some of these matches in the quiz at the beginning of our letter! 
 Finally, let’s reap the fruits of our labor and see what results this produces. Out of 434 pairs of Bobs and Nobs, 58% of the time Bobs make more money. Could this result just be a statistical anomaly you might ask. Doing a statistical test shows that we can be 99.97% sure that Bobs generate higher revenues than Nobs. Enough of these percentages, what does this mean in the green? A Bob has an average revenue that is 10.7 million US-Dollars higher. 
 
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/matches.html" 
+            width="100%" 
+            height="500vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
 
-plot of revenue for bobs and nobs
-
-### Analysing the Perfect Book for the Next Bob
+## Analysing the Perfect Book for the Next Bob
 
 Now that we have hopefully convinced you of doing a Bob for your next blockbuster, we should probably help you choose what to look for in the perfect book for a Bob. By now you are certainly familiar with our workflow: we first clean our data and then we fit both a linear regression and random forest model to our dataset to figure out which features are important. Do you expect a good book to make a good movie? 
 
@@ -200,7 +205,7 @@ Now that we have hopefully convinced you of doing a Bob for your next blockbuste
 Overall, taking only the book features leads to a higher error in predictions and less of the variability in the dataset can be explained. So choosing a good book alone does not make a good movie yet. We are sure you are glad to hear that your expertise is still valuable and important to make the next masterpiece. However, with those two models we can still make some recommendations for your choice of book. 
 Linear regression seems to not capture the influence of a high 3 star percentage in ratings for the book. If we look at the SHAP values of 3 star ratings we can see that a mediocre book (meaning a high percentage in 3 star ratings) makes for a bad movie. A high percentage in 5 star ratings on the other hand has a positive influence on the success of its Bob. Another important factor for success is the genre of the book. Some book genres seem to be more suitable for Bobs than others. We suggest you should choose either your favorite Adventures or Thrillers book to increase your chances of making a successful Bob. And last but not least, people tend to love sequels. Choosing a book that is part of a series will certainly increase your chances of making the next Lord of the Rings. 
 
-### How to Make the perfect Book Adaptation
+## How to Make the perfect Book Adaptation
 
 The first step of selecting the right book has been taken, but what now? Should your movie try to do some creative interpretation of the book or just follow it as closely as possible? Is it important that the overall feeling of the book is kept or can a change in scenery help distancing the movie from the book? 
 Contrary to what has been done so far, this part cannot be derived by features like ratings, runtime or budget. To really have an idea of how much a director has changed the initial story, one has to watch the movie and read the book. This would be impossible to do as humans, and would still require copious amounts of time even on the fastest computers that exist. Luckily, Wikipedia exists. A place where thousands of contributors improve each other's work to perfection and beyond. With this we could identify a total of 392 stories where the book and movie summaries are available. Comparing these texts with an algorithm helps determine the similarity between them, this score can then be combined with the most important book and movie features from the earlier analysis. Once again, our dear friends random forests and linear regression, can now help in deciding how important this similarity is. It is also interesting to compare the most important features of movies with the most important features of books.
@@ -226,7 +231,7 @@ Contrary to what has been done so far, this part cannot be derived by features l
 This analysis shows that in general a higher similarity is desirable. Features like movie budget and year, and whether the movie’s genres include “adventure” are still more important. When it comes to book features, they are all less important than similarity. This means that it is better to choose a book that translates well to the screen, rather than choosing one that is just popular.
 
 
-### Multiple Adaptations of Books
+## Multiple Adaptations of Books
 In the quest of helping you decide what book to choose and general insights on how you should go about putting the written word on screen there is one treasure chest which we haven’t explored yet. There are some books such as “Frankenstein” and “Dracula” where there exist several dozens of movie adaptations. It goes without saying that not all of them achieved the same level of success. So let's try to understand what sets the best Bobs apart from their book siblings. For simplicity’s sake, films that were based on the same book will be called Bob siblings from now on. The most interesting features to look at are the ones you can act on before and during your next production. We selected the budget, runtime, release year, and similarity between the book and movie plot. Unfortunately, filtering for Bobs with siblings where all these features and the revenue (success metric) are known leaves us with relatively little data and the results ought to be taken with a grain of salt. But let's look at how we went about making the most of what we have at our disposal. First, we standardized the features and revenue for all films based on the same book. Following this step, positive feature values indicate that a film is above the mean compared to their siblings, while negative values suggest the opposite. The most successful siblings are therefore characterised by a positive revenue value after standardisation. Plotting the distribution of the other features for those top films gives an indication where they generally stand with respect to their siblings.
 
 
@@ -244,7 +249,7 @@ The small amount of data leaves us with a little dilemma. Including the Bobs wit
 ---
 
 
-### Popularity of Movies vs Books
+## Popularity of Movies vs Books
 
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/popularity_over_time_js.html" 
