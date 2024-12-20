@@ -158,13 +158,12 @@ Some of these features have a positive effect on the success of the movies and o
 
 
 <div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/shap_plot.html" 
+    <iframe src="assets/plots/movies_shap.svg" 
             width="100%" 
             height="450vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
-
 This plot visualizes the SHAP values derived from the Random Forest model for all movies. SHAP values are a widely used metric to understand how individual features influence predictions in machine learning models. While the plot might initially seem complex, it becomes easy to interpret with some guidance. Each dot represents a data point, and the colors indicate the magnitude of a specific feature's value. For example, in the case of budget, red dots (indicating a high budget) are associated with positive SHAP values, meaning they contribute positively to the prediction. Conversely, blue dots (representing low budgets) show a negative impact on the outcome. For binary features (features that can be answered with a yes or no question), such as genre, red dots (high value) indicate that a particular feature is present for a given data point. 
 
 We can see that the SHAP values mostly agree with the results from the linear regression! This is a great sign and we can now use these findings to do the matching of our Bobs with Nobs that are the most similar in their preconditions for success. 
@@ -198,10 +197,10 @@ Now that we have hopefully convinced you of doing a Bob for your next blockbuste
 </div>
 
 <div style="display: flex; justify-content: center;">
-    <iframe src="assets/plots/shap_interactive_summary.html" 
+    <iframe src="assets/plots/books_shap.svg" 
             width="100%" 
-            height="450vh" 
-            style="border:none; max-width: 1200px;">
+            height="550vh" 
+            style="border:None; max-width: 1200px;">
     </iframe>
 </div>
 
@@ -225,6 +224,14 @@ Contrary to what has been done so far, this part cannot be derived by features l
     <iframe src="assets/plots/forest_books_movies.html" 
             width="100%" 
             height="500vh" 
+            style="border:none; max-width: 1200px;">
+    </iframe>
+</div>
+
+<div style="display: flex; justify-content: center;">
+    <iframe src="assets/plots/books_movies_shap.svg" 
+            width="100%" 
+            height="450vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
