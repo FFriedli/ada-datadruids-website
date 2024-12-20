@@ -249,7 +249,7 @@ start-page-body {
 
 .title {
     position: absolute;
-    top: 12%; /* Adjust vertical position of the title */
+    top: 11%; /* Adjust vertical position of the title */
     width: 100%; /* Make the title span full width */
     text-align: center; /* Center the text */
     font-size: 3rem; /* Adjust font size */
@@ -275,7 +275,7 @@ start-page-body {
 .subtitle.open-sidebar {
     /*margin-left: 250px; !* Same as sidebar width *!*/
     /*transition: margin-left .5s; !* Smooth transition *!*/
-    width: calc(100% - 250px);
+    width: calc(30% - 250px);
 }
 
 
