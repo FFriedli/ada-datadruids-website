@@ -222,7 +222,7 @@ body {
 #letter {
     width: 90%;
     max-width: 1500px;
-    background: url('./../img/paper_texture_5.jpg'); /* Repeating image */
+    background: url('./../img/paper_texture_3.jpg'); /* Repeating image */
     background-size: auto;
     background-position: center;
     background-repeat: repeat; /* Ensure the image repeats */
