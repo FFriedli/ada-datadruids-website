@@ -270,12 +270,12 @@ start-page-body {
     text-shadow: 2px 2px 5px black; /* Add a shadow for readability */
     z-index: 15; /* Ensure the title is above the image and rectangle */
     font-family: Arial, sans-serif; /* Choose a readable font */
+    transition: right 0.5s ease; /* Smooth transition for the right positioning */
 }
 
 .subtitle.open-sidebar {
-    /*margin-left: 250px; !* Same as sidebar width *!*/
-    /*transition: margin-left .5s; !* Smooth transition *!*/
-    width: calc(30% - 250px);
+    right: calc(30% - 250px); /* Adjust the right position by adding the sidebar width */
+    /*width: calc(100% - 250px); !* Ensure the subtitle width adjusts if necessary *!*/
 }
 
 
