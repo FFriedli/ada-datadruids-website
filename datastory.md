@@ -227,7 +227,7 @@ The Dütschschwizer Datadruids
 
 
 <div style="display: flex; justify-content: center; align-items: center;">
-  <img src="assets/img/signatures.png" alt="Signatures of the group" style="height: 450px;">
+  <img src="assets/img/signatures.png" alt="Signatures of the group" style="max-height: 20vh; max-width: 100%; height: auto;">
 </div>
 
 
