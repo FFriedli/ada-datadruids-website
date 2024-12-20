@@ -128,7 +128,7 @@ While we try to give you as much information as needed to understand our finding
 
 Linear Regression tries to model the data by defining the impact of each variable on the outcome. As an example, if our data included the total number of cookies consumed during filming, this would probably have a very low impact on the box office revenue. The duration of the movie on the other hand will probably have some influence. Be it that longer movies seem to give more bang for the buck and thus attract more viewers, or that shorter movies can be played more often in cinemas. Deciding on which scenario is more important is where linear regression comes in. 
 
-Linear regression is an easy to use and fast method to gain some insight into the dataset. However, as the name suggests, it can only capture linear relationships between our data and the revenue. To give you a more varied insight into our data we decided to additionally use random forests to extract feature importances and confirm our previous findings. .
+Linear regression is an easy to use and fast method to gain some insight into the dataset. However, as the name suggests, it can only capture linear relationships between our data and the revenue. To give you a more varied insight into our data we decided to additionally use random forests to extract feature importances and confirm our previous findings.
 
 While the name “random decision forest” sounds spooky, its working principle is quite easy to understand. It consists of many different decision trees that are essentially interviewing the data. A decision tree might ask whether a movie has been produced in the US and depending on the answer it will then either try to identify in which other country this movie was produced, or move on to some other questions like the number of languages the movie was translated to. A tree will normally ask between 10 and 20 questions. Afterwards, every tree makes its own estimate of the revenue of the movie. Each tree tries to have the best estimate possible. Having many of these trees then allows the algorithm to check which questions are being asked the most often, which directly gives their impact on the prediction of the revenue. 
 
@@ -153,11 +153,8 @@ In the plots derived from the random forest we can see that the vote count and b
 While both models are not perfect for the prediction of a movie's revenue, they still show a clear pattern of which parameters are important for a movie's success. 
 Some of these features have a positive effect on the success of the movies and others have a negative effect. 
 
-
-<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
-    <iframe src="assets/plots/movies_shap.svg" 
-            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
-    </iframe>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="assets/plots/movies_shap.svg" alt="Description of the SVG" style="height: 450px;">
 </div>
 This plot visualizes the SHAP values derived from the Random Forest model for all movies. SHAP values are a widely used metric to understand how individual features influence predictions in machine learning models. While the plot might initially seem complex, it becomes easy to interpret with some guidance. Each dot represents a data point, and the colors indicate the magnitude of a specific feature's value. For example, in the case of budget, red dots (indicating a high budget) are associated with positive SHAP values, meaning they contribute positively to the prediction. Conversely, blue dots (representing low budgets) show a negative impact on the outcome. For binary features (features that can be answered with a yes or no question), such as genre, red dots (high value) indicate that a particular feature is present for a given data point. 
 
@@ -193,14 +190,9 @@ Now that we have hopefully convinced you of doing a Bob for your next blockbuste
     </iframe>
 </div>
 
-<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
-    <iframe src="assets/plots/books_shap.svg" 
-            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
-    </iframe>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="assets/plots/books_shap.svg" alt="Description of the SVG" style="height: 450px;">
 </div>
-
-
-
 
 Overall, taking only the book features leads to a higher error in predictions and less of the variability in the dataset can be explained. So choosing a good book alone does not make a good movie yet. We are sure you are glad to hear that your expertise is still valuable and important to make the next masterpiece. However, with those two models we can still make some recommendations for your choice of book. 
 Linear regression seems to not capture the influence of a high 3 star percentage in ratings for the book. If we look at the SHAP values of 3 star ratings we can see that a mediocre book (meaning a high percentage in 3 star ratings) makes for a bad movie. A high percentage in 5 star ratings on the other hand has a positive influence on the success of its Bob. Another important factor for success is the genre of the book. Some book genres seem to be more suitable for Bobs than others. We suggest you should choose either your favorite Adventures or Thrillers book to increase your chances of making a successful Bob. And last but not least, people tend to love sequels. Choosing a book that is part of a series will certainly increase your chances of making the next Lord of the Rings. 
@@ -223,10 +215,8 @@ Contrary to what has been done so far, this part cannot be derived by features l
     </iframe>
 </div>
 
-<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
-    <iframe src="assets/plots/books_movies_shap.svg" 
-            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
-    </iframe>
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img src="assets/plots/books_movies_shap.svg" alt="Description of the SVG" style="height: 450px;">
 </div>
 This analysis shows that in general a higher similarity is desirable. Features like movie budget and year, and whether the movie’s genres include “adventure” are still more important. When it comes to book features, they are all less important than similarity. This means that it is better to choose a book that translates well to the screen, rather than choosing one that is just popular.
 
