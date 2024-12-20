@@ -160,7 +160,7 @@ Overall, taking only the book features leads to a higher error in predictions an
 Linear regression seems to not capture the influence of a high 3 star percentage in ratings for the book. If we look at the SHAP values of 3 star ratings we can see that a mediocre book (meaning a high percentage in 3 star ratings) makes for a bad movie. A high percentage in 5 star ratings on the other hand has a positive influence on the success of its Bob. Another important factor for success is the genre of the book. Some book genres seem to be more suitable for Bobs than others. We suggest you should choose either your favorite Adventures or Thrillers book to increase your chances of making a successful Bob. And last but not least, people tend to love sequels. Choosing a book that is part of a series will certainly increase your chances of making the next Lord of the Rings.
 
 
-## How to adapt the book ?
+## How to adapt the book?
 
 
 The first step of selecting the right book has been taken, but what now? Should your movie try to do some creative interpretation of the book or just follow it as closely as possible? Is it important that the overall feeling of the book is kept or can a change in scenery help distancing the movie from the book? 
@@ -205,16 +205,19 @@ The small amount of data leaves us with a little dilemma. Including the Bobs wit
 ## Final recommendations
 Let us quickly summarize what we have learned from looking at the data. Basing your next film on a book can clearly give you an edge compared to other sources of plotlines. An even smarter choice is to opt for an entire book series, as it not only boosts your chances of success but also opens the door to producing more than one movie. Make sure that the series hasn’t been put on screen yet and look out for high 5-star and low 3-star rating percentages. Additionally, the best genres to look out for are adventure and thriller. Once you've found a story that resonates with you, aim to stay true to the book's plot. This not only reduces the risk of your film falling flat but also helps avoid upsetting the book's fanbase by drastically altering their beloved narrative. Finally, let us recommend some stories that are dear to our hearts and fit all the aforementioned criteria: The Hierarchy Series from James Islington, The Stormlight Archive from Brandon Sanderson and the Empyrean Series by Rebecca Yarros. 
 
-<div style="display: flex; justify-content: center; margin: 2rem 0;">
-    <img src="assets/img/books/will_of_many.jpg"
-         style="max-width: 50%; height: auto; margin: 0 2rem; max-height: 250px;" 
-         alt="Image 1">
-    <img src="assets/img/books/way_of_kings.jpg" 
-         style="max-width: 50%; height: auto; margin: 0 2rem; max-height: 250px;" 
-         alt="Image 2">
-    <img src="assets/img/books/fourth_wing.jpg" 
-         style="max-width: 50%; height: auto; margin: 0 2rem; max-height: 250px;" 
-         alt="Image 3">
+
+<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0;; max-width: 500px">
+        <img src="assets/img/books/will_of_many.jpg" 
+             style="flex: 1 1 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); height: auto;" 
+             alt="Image 1">
+        <img src="assets/img/books/way_of_kings.jpg" 
+             style="flex: 1 1 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); height: auto;" 
+             alt="Image 2">
+        <img src="assets/img/books/fourth_wing.jpg" 
+             style="flex: 1 1 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); height: auto;" 
+             alt="Image 3">
+    </div>
 </div>
 
 We really hope to have convinced you, Philmore Brooks, to film more books.
