@@ -153,13 +153,6 @@ In the plots derived from the random forest we can see that the vote count and b
 While both models are not perfect for the prediction of a movie's revenue, they still show a clear pattern of which parameters are important for a movie's success. 
 Some of these features have a positive effect on the success of the movies and others have a negative effect. 
 
-
-<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
-    <iframe src="assets/plots/movies_shap.svg" 
-            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
-    </iframe>
-</div>
-
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="assets/plots/movies_shap.svg" alt="Description of the SVG" style="height: 450px;">
 </div>
@@ -197,12 +190,6 @@ Now that we have hopefully convinced you of doing a Bob for your next blockbuste
     </iframe>
 </div>
 
-<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
-    <iframe src="assets/plots/books_shap.svg" 
-            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
-    </iframe>
-</div>
-
 <div style="display: flex; justify-content: center; align-items: center;">
   <img src="assets/plots/books_shap.svg" alt="Description of the SVG" style="height: 450px;">
 </div>
@@ -225,12 +212,6 @@ Contrary to what has been done so far, this part cannot be derived by features l
             width="50%" 
             height="500px" 
             style="border:none;">
-    </iframe>
-</div>
-
-<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
-    <iframe src="assets/plots/books_movies_shap.svg" 
-            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
     </iframe>
 </div>
 
