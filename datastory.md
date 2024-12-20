@@ -2,7 +2,7 @@
 layout: letter
 ---
 
-## Dear Director Philmore Brooks,
+## Dear Philmore Brooks,
 
 Being one of our favorite directors, it's truly a shame that so much time has passed since your last film. We've heard that a lack of inspiration is weighing you down, so we decided to offer our help. Imagine this: a packed theater, audiences glued to their seats, so captivated by the movie that they forget about their popcorn, and critics raving on and on about your latest masterpiece. What if we told you that the missing puzzle piece for creating such a blockbuster might already be gathering dust on millions of bookshelves all across the world, waiting to be brought to life by you?
 You must constantly get movie ideas from all kinds of people, and we bet it gets exhausting, with everyone thinking they know what makes a great script. Instead of crafting a half-hearted plot of our own, we have decided to dive deep into the great stories that already exist in the timeless form of books. By adopting our ideas, your next film has the potential to stand among the greatest in cinematic history.
@@ -112,7 +112,7 @@ While the name “random decision forest” sounds spooky, its working principle
 
 In the linear regression plot you can see all features, out of the almost 50 we tested, that have significant p-values. Points on the right side of the dashed line have a positive effect on the revenue prediction while those on the left side have a negative one. A high vote count seems to have the highest positive effect on the revenue, together with the inflation-adjusted budget. The popularity measure is a custom measure of how often the movie has been looked up lately on the IMDB website and has a positive impact as well. Surprisingly, the movie year has a negative effect on the revenue, meaning that if we isolate the effect of the release date, newer movies perform worse than older ones. We explain this to ourselves with the fact that nowadays there are a lot of bad movies (not from you of course) that make no profit at all, while in the past, movie making was more of an exclusive art form, where much less movies were made. So while there are a few great movies with a lot of revenue nowadays, there are even more really bad ones, leading to a newer release year having a negative effect on the revenue. 
 In the plots derived from the random forest we can see that the vote count and budget is very important for the success of a movie. 
-While both models are not perfect for the prediction of a movie's revenue, they still show a clear pattern of which parameters are important for a movie's success. It is interesting that factors such as the number of translations and the production country have no impact whatsoever.
+While both models are not perfect for the prediction of a movie's revenue, they still show a clear pattern of which parameters are important for a movie's success. It is interesting that factors such as the number of translations and the production country have no significant impact.
 Some of these features have a positive effect on the success of the movies and others have a negative effect. 
 
 
