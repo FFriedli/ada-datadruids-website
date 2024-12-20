@@ -205,6 +205,18 @@ The small amount of data leaves us with a little dilemma. Including the Bobs wit
 ## Final recommendations
 Let us quickly summarize what we have learned from looking at the data. Basing your next film on a book can clearly give you an edge compared to other sources of plotlines. An even smarter choice is to opt for an entire book series, as it not only boosts your chances of success but also opens the door to producing more than one movie. Make sure that the series hasn’t been put on screen yet and look out for high 5-star and low 3-star rating percentages. Additionally, the best genres to look out for are adventure and thriller. Once you've found a story that resonates with you, aim to stay true to the book's plot. This not only reduces the risk of your film falling flat but also helps avoid upsetting the book's fanbase by drastically altering their beloved narrative. Finally, let us recommend some stories that are dear to our hearts and fit all the aforementioned criteria: The Hierarchy Series from James Islington, The Stormlight Archive from Brandon Sanderson and the Empyrean Series by Rebecca Yarros. 
 
+<div style="display: flex; justify-content: center; margin: 2rem 0;">
+    <img src="assets/img/books/fourth_wing.jpg" 
+         style="max-width: 50%; height: auto; margin: 0 2rem; max-height: 250px;" 
+         alt="Image 1">
+    <img src="assets/img/books/way_of_kings.jpg" 
+         style="max-width: 50%; height: auto; margin: 0 2rem; max-height: 250px;" 
+         alt="Image 2">
+    <img src="assets/img/books/will_of_many.jpg" 
+         style="max-width: 50%; height: auto; margin: 0 2rem; max-height: 250px;" 
+         alt="Image 3">
+</div>
+
 We really hope to have convinced you, Philmore Brooks, to film more books.
 
 Sincerely, 
