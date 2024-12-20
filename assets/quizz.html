@@ -136,6 +136,7 @@
 
     let currentQuestion = 0;
     let correctAnswers = 0;
+    let questionAnswered = false; // Flag to track if the question is already answered
 
     function showQuestion() {
         const questionDiv = document.getElementById('question');
@@ -143,79 +144,81 @@
         const summaryDiv = document.getElementById('summary');
         const nextButton = document.getElementById('nextButton');
         const repeatButton = document.getElementById('repeatButton');
-        
+
         resultDiv.innerHTML = "";
         summaryDiv.innerHTML = "";
         nextButton.style.display = "none"; // Hide next button initially
+        questionAnswered = false; // Reset the flag for the new question
 
         if (currentQuestion < movies.length) {
             const movie = movies[currentQuestion];
 
             questionDiv.innerHTML = `
-                <div class="movie" onclick="checkAnswer(${movie.revenue1}, ${movie.revenue2}, true, '${movie.title1}', '${movie.title2}')">
-                    <img src="${movie.cover1}" alt="${movie.title1}">
-                    <p>${movie.title1}</p>
-                </div>
-                <div class="movie" onclick="checkAnswer(${movie.revenue1}, ${movie.revenue2}, false, '${movie.title1}', '${movie.title2}')">
-                    <img src="${movie.cover2}" alt="${movie.title2}">
-                    <p>${movie.title2}</p>
-                </div>
-            `;
+            <div class="movie" onclick="checkAnswer(${movie.revenue1}, ${movie.revenue2}, true, '${movie.title1}', '${movie.title2}')">
+                <img src="${movie.cover1}" alt="${movie.title1}">
+                <p>${movie.title1}</p>
+            </div>
+            <div class="movie" onclick="checkAnswer(${movie.revenue1}, ${movie.revenue2}, false, '${movie.title1}', '${movie.title2}')">
+                <img src="${movie.cover2}" alt="${movie.title2}">
+                <p>${movie.title2}</p>
+            </div>
+        `;
         }
     }
 
     function checkAnswer(revenue1, revenue2, isFirstSelected, title1, title2) {
+        if (questionAnswered) {
+            return; // Exit if the question has already been answered
+        }
+
+        questionAnswered = true; // Set the flag to true to prevent further clicks
+
         const questionDiv = document.getElementById('question');
         const resultDiv = document.getElementById('result');
         const summaryDiv = document.getElementById('summary');
         const nextButton = document.getElementById('nextButton');
         const repeatButton = document.getElementById('repeatButton');
-        
-        resultDiv.innerHTML = "";
-        summaryDiv.innerHTML = "";
 
         const correct = (isFirstSelected && revenue1 > revenue2) || (!isFirstSelected && revenue2 > revenue1);
 
         if (correct) {
             correctAnswers++;
             resultDiv.innerHTML = `
-                <span class="icon correct">✅</span>
-                <p>Correct! ${title1}: $${revenue1.toLocaleString()} million vs ${title2}: $${revenue2.toLocaleString()} million</p>
-            `;
+            <span class="icon correct">✅</span>
+            <p>Correct! ${title1}: $${revenue1.toLocaleString()} million vs ${title2}: $${revenue2.toLocaleString()} million</p>
+        `;
         } else {
             resultDiv.innerHTML = `
-                <span class="icon wrong">❌</span>
-                <p>Wrong! ${title1}: $${revenue1.toLocaleString()} million vs ${title2}: $${revenue2.toLocaleString()} million</p>
-            `;
+            <span class="icon wrong">❌</span>
+            <p>Wrong! ${title1}: $${revenue1.toLocaleString()} million vs ${title2}: $${revenue2.toLocaleString()} million</p>
+        `;
         }
 
-        // If it's the last question, directly show results and hide "Next Question" button
         if (currentQuestion === movies.length - 1) {
-            document.getElementById('nextButton').style.display = "none";
-            document.getElementById('repeatButton').style.display = "inline-block";
+            nextButton.style.display = "none";
+            repeatButton.style.display = "inline-block";
             summaryDiv.innerHTML = `
-                <h2>You finished the Quiz! You got ${correctAnswers} / ${movies.length} correct.</h2>
-            `;
+            <h2>You finished the Quiz! You got ${correctAnswers} / ${movies.length} correct.</h2>
+        `;
         } else {
             summaryDiv.innerHTML = `
-                <h2>Current Score: ${correctAnswers} / ${currentQuestion + 1}</h2>
-            `;
-            // Show "Next Question" button if there are more questions
-            document.getElementById('nextButton').style.display = "inline-block";
+            <h2>Current Score: ${correctAnswers} / ${currentQuestion + 1}</h2>
+        `;
+            nextButton.style.display = "inline-block";
         }
     }
 
     function nextQuestion() {
         currentQuestion++;
-        showQuestion(); // Show the next question
+        showQuestion();
     }
 
     function resetQuiz() {
         currentQuestion = 0;
         correctAnswers = 0;
         const repeatButton = document.getElementById('repeatButton');
-        repeatButton.style.display = "none"; 
-        showQuestion(); // Restart the quiz
+        repeatButton.style.display = "none";
+        showQuestion();
     }
 
     showQuestion();
