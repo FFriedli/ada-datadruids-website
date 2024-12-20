@@ -117,7 +117,7 @@ body {
     padding: 5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    line-height: 2;
+    line-height: 1.6;
     position: relative;
     background-image: repeating-linear-gradient(
             to bottom,
