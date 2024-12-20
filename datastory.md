@@ -4,7 +4,7 @@ layout: letter
 
 # Finding the next Lord of the Rings: From Book to Cinematic Glory
 
-### Dear Director Philmore Tomes,
+## Dear Director Philmore Tomes,
 
 Being one of our favorite directors, it's truly a shame that so much time has passed since your last film. We've heard
 that a lack of inspiration is weighing you down, so we've decided to offer our help. Imagine this: a packed theater,
