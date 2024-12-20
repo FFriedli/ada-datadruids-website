@@ -160,7 +160,7 @@ Some of these features have a positive effect on the success of the movies and o
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/movies_shap.svg" 
             width="100%" 
-            height="450vh" 
+            height="550vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
@@ -231,7 +231,7 @@ Contrary to what has been done so far, this part cannot be derived by features l
 <div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/books_movies_shap.svg" 
             width="100%" 
-            height="450vh" 
+            height="550vh" 
             style="border:none; max-width: 1200px;">
     </iframe>
 </div>
