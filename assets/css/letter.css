@@ -171,30 +171,29 @@ h1, h2, h3, h4, p {
 }
 
 h1, h2 {
-    text-align: center;
     margin-bottom: 1rem;
 }
 
 h1 {
-    font-size: 3rem;
-}
-
-h2 {
     font-size: 2.5rem;
 }
 
-h3 {
+h2 {
     font-size: 2rem;
 }
 
-h4 {
+h3 {
     font-size: 1.7rem;
 }
 
-p {
-    text-indent: 2em; /* Paragraph indentation */
-    margin-bottom: 1rem;
+h4 {
     font-size: 1.5rem;
+}
+
+p {
+    text-indent: 0em; /* Paragraph indentation */
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
 }
 
 /* Optional: Add a signature */
