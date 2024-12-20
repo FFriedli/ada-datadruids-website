@@ -249,10 +249,10 @@ start-page-body {
 
 .title {
     position: absolute;
-    top: 20%; /* Adjust vertical position of the title */
+    top: 11%; /* Adjust vertical position of the title */
     width: 100%; /* Make the title span full width */
     text-align: center; /* Center the text */
-    font-size: 2.5rem; /* Adjust font size */
+    font-size: 3rem; /* Adjust font size */
     color: white; /* White text for contrast */
     text-shadow: 2px 2px 5px black; /* Add a shadow for readability */
     z-index: 15; /* Ensure the title is above the image and rectangle */
@@ -261,23 +261,21 @@ start-page-body {
 
 .subtitle {
     position: absolute;
-    top: 40%; /* Position it in the middle vertically */
-    width: 100%; /* Make the title span full width */
-    text-align: center; /* Center the text */
+    top: 63%; /* Position it in the lower half vertically */
+    right: 30%; /* Position it towards the right side of the screen */
+    width: auto; /* Let the width adjust based on content */
+    text-align: center; /* Align the text to the right */
     font-size: 1.5rem; /* Adjust font size as needed */
     color: white; /* Ensure the subtitle text is readable */
     text-shadow: 2px 2px 5px black; /* Add a shadow for readability */
     z-index: 15; /* Ensure the title is above the image and rectangle */
     font-family: Arial, sans-serif; /* Choose a readable font */
-
-    /*margin-top: 0.5rem; !* Add some space above the subtitle *!*/
-    /*transform: translate(-50%, -50%); !* Center the subtitle *!*/
 }
 
 .subtitle.open-sidebar {
     /*margin-left: 250px; !* Same as sidebar width *!*/
     /*transition: margin-left .5s; !* Smooth transition *!*/
-    width: calc(100% - 250px);
+    width: calc(30% - 250px);
 }
 
 
