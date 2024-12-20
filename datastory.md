@@ -208,20 +208,17 @@ Let us quickly summarize what we have learned from looking at the data. Basing y
 
 <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0;">
     <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0;; max-width: 500px">
-        <img src="assets/img/books/fourth_wing.jpg" 
+        <img src="assets/img/books/will_of_many.jpg" 
              style="flex: 1 1 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); height: auto;" 
              alt="Image 1">
         <img src="assets/img/books/way_of_kings.jpg" 
              style="flex: 1 1 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); height: auto;" 
              alt="Image 2">
-        <img src="assets/img/books/will_of_many.jpg" 
+        <img src="assets/img/books/fourth_wing.jpg" 
              style="flex: 1 1 calc(33.33% - 1rem); max-width: calc(33.33% - 1rem); height: auto;" 
              alt="Image 3">
     </div>
 </div>
-
-
-
 
 We really hope to have convinced you, Philmore Brooks, to film more books.
 
