@@ -134,19 +134,16 @@ While the name “random decision forest” sounds spooky, its working principle
 
 
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: nowrap; width: 100%;">
     <iframe src="assets/plots/regression.html" 
-            width="100%" 
-            height="500vh" 
-            style="border:none; max-width: 1200px;">
+            width="50%" 
+            height="500px" 
+            style="border:none;">
     </iframe>
-</div>
-
-<div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/random_forest_importances.html" 
-            width="100%" 
-            height="500vh" 
-            style="border:none; max-width: 1200px;">
+            width="50%" 
+            height="500px" 
+            style="border:none;">
     </iframe>
 </div>
 
@@ -157,11 +154,9 @@ While both models are not perfect for the prediction of a movie's revenue, they 
 Some of these features have a positive effect on the success of the movies and others have a negative effect. 
 
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
     <iframe src="assets/plots/movies_shap.svg" 
-            width="100%" 
-            height="550vh" 
-            style="border:none; max-width: 1200px;">
+            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
     </iframe>
 </div>
 This plot visualizes the SHAP values derived from the Random Forest model for all movies. SHAP values are a widely used metric to understand how individual features influence predictions in machine learning models. While the plot might initially seem complex, it becomes easy to interpret with some guidance. Each dot represents a data point, and the colors indicate the magnitude of a specific feature's value. For example, in the case of budget, red dots (indicating a high budget) are associated with positive SHAP values, meaning they contribute positively to the prediction. Conversely, blue dots (representing low budgets) show a negative impact on the outcome. For binary features (features that can be answered with a yes or no question), such as genre, red dots (high value) indicate that a particular feature is present for a given data point. 
@@ -180,29 +175,26 @@ plot of revenue for bobs and nobs
 
 Now that we have hopefully convinced you of doing a Bob for your next blockbuster, we should probably help you choose what to look for in the perfect book for a Bob. By now you are certainly familiar with our workflow: we first clean our data and then we fit both a linear regression and random forest model to our dataset to figure out which features are important. Do you expect a good book to make a good movie? 
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: nowrap; width: 100%;">
     <iframe src="assets/plots/reg_books.html" 
-            width="100%" 
-            height="500vh" 
-            style="border:none; max-width: 1200px;">
+            width="50%" 
+            height="500px" 
+            style="border:none;">
     </iframe>
-</div>
-
-<div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/forest_books.html" 
-            width="100%" 
-            height="500vh" 
-            style="border:none; max-width: 1200px;">
+            width="50%" 
+            height="500px" 
+            style="border:none;">
     </iframe>
 </div>
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
     <iframe src="assets/plots/books_shap.svg" 
-            width="100%" 
-            height="550vh" 
-            style="border:None; max-width: 1200px;">
+            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
     </iframe>
 </div>
+
+
 
 
 Overall, taking only the book features leads to a higher error in predictions and less of the variability in the dataset can be explained. So choosing a good book alone does not make a good movie yet. We are sure you are glad to hear that your expertise is still valuable and important to make the next masterpiece. However, with those two models we can still make some recommendations for your choice of book. 
@@ -213,26 +205,22 @@ Linear regression seems to not capture the influence of a high 3 star percentage
 The first step of selecting the right book has been taken, but what now? Should your movie try to do some creative interpretation of the book or just follow it as closely as possible? Is it important that the overall feeling of the book is kept or can a change in scenery help distancing the movie from the book? 
 Contrary to what has been done so far, this part cannot be derived by features like ratings, runtime or budget. To really have an idea of how much a director has changed the initial story, one has to watch the movie and read the book. This would be impossible to do as humans, and would still require copious amounts of time even on the fastest computers that exist. Luckily, Wikipedia exists. A place where thousands of contributors improve each other's work to perfection and beyond. With this we could identify a total of 392 stories where the book and movie summaries are available. Comparing these texts with an algorithm helps determine the similarity between them, this score can then be combined with the most important book and movie features from the earlier analysis. Once again, our dear friends random forests and linear regression, can now help in deciding how important this similarity is. It is also interesting to compare the most important features of movies with the most important features of books.
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: nowrap; width: 100%;">
     <iframe src="assets/plots/reg_books_movies.html" 
-            width="100%" 
-            height="500vh" 
-            style="border:none; max-width: 1200px;">
+            width="50%" 
+            height="500px" 
+            style="border:none;">
     </iframe>
-</div>
-<div style="display: flex; justify-content: center;">
     <iframe src="assets/plots/forest_books_movies.html" 
-            width="100%" 
-            height="500vh" 
-            style="border:none; max-width: 1200px;">
+            width="50%" 
+            height="500px" 
+            style="border:none;">
     </iframe>
 </div>
 
-<div style="display: flex; justify-content: center;">
+<div style="display: flex; justify-content: center; align-items: flex-start; width: 100%; margin: 0; padding: 0;">
     <iframe src="assets/plots/books_movies_shap.svg" 
-            width="100%" 
-            height="550vh" 
-            style="border:none; max-width: 1200px;">
+            style="border: none; width: 80%; height: 70vh; max-width: 1200px;">
     </iframe>
 </div>
 This analysis shows that in general a higher similarity is desirable. Features like movie budget and year, and whether the movie’s genres include “adventure” are still more important. When it comes to book features, they are all less important than similarity. This means that it is better to choose a book that translates well to the screen, rather than choosing one that is just popular.
