@@ -277,13 +277,10 @@ start-page-body {
 
 .subtitle.open-sidebar {
     right: calc(30% - 250px); /* Adjust the right position by adding the sidebar width */
-    /*width: calc(100% - 250px); !* Ensure the subtitle width adjusts if necessary *!*/
 }
 
 
 .title.open-sidebar {
-    /*margin-left: 250px; !* Same as sidebar width *!*/
-    /*transition: margin-left .5s; !* Smooth transition *!*/
     width: calc(100% - 250px);
 }
 
